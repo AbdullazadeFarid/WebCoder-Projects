@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.conta {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1860px;
+}
+
+.section_navigate {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 575px) {
+  .section_navigate {
+    margin-top: 50px;
+  }
+}
+.section_navigate_prev {
+  color: rgb(133, 133, 133);
+  font-size: 16px;
+  font-weight: 400;
+}
+.section_navigate_divide {
+  background-color: rgb(177, 177, 156);
+  height: 16px;
+  width: 1px;
+}
+.section_navigate_now {
+  color: rgb(45, 45, 43);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.about_product_title {
+  margin-bottom: 60px;
+  margin-top: 49px;
+  font-family: "GFS Didot", serif;
+  color: rgb(45, 45, 43);
+  font-size: clamp(1.5rem, 2.5vw, 7rem);
+}
+.about_product_cont {
+  display: flex;
+  align-items: center;
+  gap: 68px;
+}
+@media (max-width: 767px) {
+  .about_product_cont {
+    flex-direction: column;
+  }
+}
+.about_product_cont_left {
+  flex: 1;
+  max-width: 680px;
+}
+.about_product_cont_left img {
+  width: 100%;
+}
+.about_product_cont_right {
+  flex: 1;
+  max-width: 763px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 130px 0px 150px 0px;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .price {
+    flex-wrap: wrap;
+    gap: 70px;
+  }
+}
+.price_num {
+  color: rgb(184, 146, 106);
+  font-family: "GFS Didot", serif;
+  font-weight: 700;
+  font-size: 64px;
+  text-align: center;
+}
+.price_desc {
+  font-family: "Raleway", sans-serif;
+  font-size: 28px;
+  color: rgb(45, 45, 43);
+  font-weight: 500;
+  word-break: break-word;
+}/*# sourceMappingURL=about.css.map */

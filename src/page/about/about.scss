@@ -1,0 +1,102 @@
+@import "../../responsive/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.conta {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1860px;
+}
+
+.section_navigate {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include mobile {
+    margin-top: 50px;
+  }
+
+  &_prev {
+    color: rgb(133 133 133);
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &_divide {
+    background-color: rgb(177, 177, 156);
+    height: 16px;
+    width: 1px;
+  }
+
+  &_now {
+    color: rgba(45, 45, 43, 1);
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.about_product {
+  &_title {
+    margin-bottom: 60px;
+    margin-top: 49px;
+    font-family: "GFS Didot", serif;
+    color: rgb(45, 45, 43);
+    font-size: clamp(1.5rem, 2.5vw, 7rem);
+  }
+  &_cont {
+    display: flex;
+    align-items: center;
+    gap: 68px;
+
+    @include tablet {
+      flex-direction: column;
+    }
+    &_left {
+      flex: 1;
+      max-width: 680px;
+      img {
+        width: 100%;
+      }
+    }
+
+    &_right {
+      flex: 1;
+      max-width: 763px;
+    }
+  }
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 130px 0px 150px 0px;
+  gap: 30px;
+
+  @include tablet {
+    // flex-direction: column;
+    flex-wrap: wrap;
+    gap: 70px;
+  }
+
+  &_num {
+    color: rgba(184, 146, 106, 1);
+    font-family: "GFS Didot", serif;
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+  }
+
+  &_desc {
+    font-family: "Raleway", sans-serif;
+    font-size: 28px;
+    color: rgba(45, 45, 43, 1);
+    font-weight: 500;
+    word-break: break-word;
+  }
+}

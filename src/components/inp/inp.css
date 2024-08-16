@@ -1,0 +1,25 @@
+.form {
+  margin-top: 15px;
+}
+.form_span {
+  position: relative;
+}
+.form_span .span_eye {
+  position: absolute;
+  right: 9px;
+  top: 0;
+}
+.form .password_comp {
+  border: 1px solid rgb(177, 177, 156);
+  padding: 17px 20px;
+  border-radius: 10px;
+  outline: none;
+  max-width: 467px;
+  width: 100%;
+  background-color: rgb(234, 230, 223);
+}
+@media (max-width: 767px) {
+  .form .password_comp {
+    max-width: 100%;
+  }
+}/*# sourceMappingURL=inp.css.map */

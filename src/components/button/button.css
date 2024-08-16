@@ -1,0 +1,48 @@
+.button_comp {
+  padding: 22px 0px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(184, 146, 106);
+  color: rgb(234, 230, 223);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  border: 1px solid rgb(184, 146, 106);
+}
+@media (max-width: 767px) {
+  .button_comp {
+    max-width: 100% !important;
+  }
+}
+.button_comp:hover {
+  background-color: rgb(154, 121, 88);
+}
+
+.reset_btn {
+  margin-top: 20px;
+}
+
+.newpassword {
+  margin-top: 20px;
+}
+
+.registerbtn {
+  margin-top: 20px;
+}
+
+.about_shopnow_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 330px;
+}
+@media (max-width: 575px) {
+  .about_shopnow_btn {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+}/*# sourceMappingURL=button.css.map */

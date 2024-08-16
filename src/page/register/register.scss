@@ -1,0 +1,66 @@
+@import "../../responsive/mixins";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+  .register_left {
+    flex: 1;
+    margin-top: 28px;
+    padding-left: 30px;
+    @include mobile{
+        padding: 0px 16px;
+    }
+
+    &_bottom {
+      margin-top: 180px;
+      @include mobile{
+        margin-top: 30px;
+      }
+
+      &_title {
+        font-family: "GFS Didot", serif;
+        color: rgba(45, 45, 43, 1);
+        font-size: clamp(1.5rem, 2.5vw, 7rem);
+        font-weight: 700;
+      }
+
+      &_form {
+        margin: 50px 0px 70px 0px;
+
+        &_pass {
+          margin-top: 15px;
+
+
+        }
+
+
+      }
+
+      &_register {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        gap: 20px;
+        &_title {
+          font-family: "Raleway", sans-serif;
+          font-weight: 500px;
+          font-size: 16px;
+        }
+        &_desc {
+          font-family: "Raleway", sans-serif;
+          font-weight: 500px;
+          font-size: 16px;
+          color: rgba(184, 146, 106, 1);
+          border-bottom: 1px solid rgba(184, 146, 106, 1);
+        }
+      }
+    }
+  }
+
+

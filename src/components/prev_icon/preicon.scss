@@ -1,0 +1,18 @@
+.prev_icon {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    &_ic {
+      background-color: rgba(184, 146, 106, 1);
+      padding: 7px;
+      border-radius: 50%;
+      border: none;
+    }
+    &_home {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(184, 146, 106, 1);
+      font-family: "Raleway", sans-serif;
+    }
+  }

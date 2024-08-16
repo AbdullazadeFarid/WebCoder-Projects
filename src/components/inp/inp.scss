@@ -1,0 +1,32 @@
+@import "../../responsive/mixins";
+
+
+.form{
+    margin-top: 15px;
+
+
+    &_span{
+      position: relative;
+
+      .span_eye{
+        position: absolute;
+        right: 9px;
+        top: 0;
+      }
+    }
+    .password_comp {
+        border: 1px solid rgb(177, 177, 156);
+        padding: 17px 20px;
+        border-radius: 10px;
+        outline: none;
+        max-width: 467px;
+        width: 100%;
+        background-color: rgba(234, 230, 223, 1);
+        @include tablet {
+          max-width: 100%;
+        }
+
+
+      }
+}
+

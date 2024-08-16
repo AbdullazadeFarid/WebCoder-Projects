@@ -1,0 +1,20 @@
+/* layout.css */
+.overlay-active {
+    position: relative;
+  }
+
+  .overlay-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3) /* Прозрачный черный фон */
+  }
+
+  .main-blur {
+    position: relative;
+    filter: blur(2px); /* Размытие */
+    transition: filter 0.3s ease;
+  }

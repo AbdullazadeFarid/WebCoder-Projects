@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.register_left {
+  flex: 1;
+  margin-top: 28px;
+  padding-left: 30px;
+}
+@media (max-width: 575px) {
+  .register_left {
+    padding: 0px 16px;
+  }
+}
+.register_left_bottom {
+  margin-top: 180px;
+}
+@media (max-width: 575px) {
+  .register_left_bottom {
+    margin-top: 30px;
+  }
+}
+.register_left_bottom_title {
+  font-family: "GFS Didot", serif;
+  color: rgb(45, 45, 43);
+  font-size: clamp(1.5rem, 2.5vw, 7rem);
+  font-weight: 700;
+}
+.register_left_bottom_form {
+  margin: 50px 0px 70px 0px;
+}
+.register_left_bottom_form_pass {
+  margin-top: 15px;
+}
+.register_left_bottom_register {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+.register_left_bottom_register_title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500px;
+  font-size: 16px;
+}
+.register_left_bottom_register_desc {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500px;
+  font-size: 16px;
+  color: rgb(184, 146, 106);
+  border-bottom: 1px solid rgb(184, 146, 106);
+}/*# sourceMappingURL=register.css.map */

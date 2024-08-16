@@ -1,0 +1,18 @@
+.prev_icon {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.prev_icon_ic {
+  background-color: rgb(184, 146, 106);
+  padding: 7px;
+  border-radius: 50%;
+  border: none;
+}
+.prev_icon_home {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(184, 146, 106);
+  font-family: "Raleway", sans-serif;
+}/*# sourceMappingURL=preicon.css.map */

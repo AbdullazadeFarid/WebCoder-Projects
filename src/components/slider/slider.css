@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.slide_products {
+  position: relative;
+  width: 100%;
+}
+.slide_products img {
+  width: 100%;
+}
+.slide_products .blur {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 7%;
+  background-color: rgba(255, 255, 255, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next_prev {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 30px;
+  gap: 4px;
+  margin-top: 29px;
+}
+.next_prev .icon {
+  background-color: rgb(184, 146, 106);
+  padding: 7px;
+  border-radius: 50%;
+  border: none;
+}
+@media (max-width: 575px) {
+  .next_prev {
+    display: none;
+  }
+}
+
+.swiper-pagination {
+  display: none;
+  bottom: -3px;
+}
+@media (max-width: 575px) {
+  .swiper-pagination {
+    display: block;
+  }
+}
+
+.line {
+  width: 20%;
+  height: 4px;
+  background-color: rgb(184, 146, 106); /* Цвет линии */
+  transition: transform 0.3s ease; /* Анимация при изменении положения */
+  position: relative;
+  margin-top: 20px;
+}
+@media (max-width: 575px) {
+  .line {
+    display: none;
+  }
+}/*# sourceMappingURL=slider.css.map */

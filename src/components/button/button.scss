@@ -1,0 +1,54 @@
+@import "../../responsive/mixins";
+
+.button_comp {
+    padding: 22px 0px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(184, 146, 106, 1);
+    color: rgba(234, 230, 223, 1);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:  all ease .3s;
+    border: 1px solid rgba(184, 146, 106, 1)
+    ;
+    @include tablet{
+      max-width: 100% !important;
+    }
+
+    &:hover {
+      background-color: rgb(154, 121, 88); // Цвет при наведении
+    }
+
+  }
+
+
+  .reset_btn{
+    margin-top: 20px;
+  }
+
+
+  .newpassword{
+    margin-top: 20px;
+  }
+
+  .registerbtn{
+    margin-top: 20px;
+  }
+
+
+  .about_shopnow_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    max-width: 330px;
+    @include mobile{
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 50px;
+    }
+
+  }
