@@ -41,7 +41,7 @@
   margin-top: 49px;
   font-family: "GFS Didot", serif;
   color: rgb(45, 45, 43);
-  font-size: clamp(1.5rem, 2.5vw, 7rem);
+  font-size: clamp(1.5rem, 3.5vw, 7rem);
 }
 .about_product_cont {
   display: flex;

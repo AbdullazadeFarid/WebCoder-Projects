@@ -1,17 +1,21 @@
 
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../../shared/header/header';
 import Footer from '../../shared/footer/footer';
 import { Outlet } from 'react-router';
 import "./layout.css";
-import Search_results from '../../components/search_results/search_results';
+import { SearchContext } from '../../context/context';
+import Search_results from '../../page/search_results/search_results';
 
 
 const Layout = () => {
 
 const [overlayVisible,setOverlayVisible] = useState(false)
 const [serchresults,Setsearchresults] = useState("")
+const { inp, setInp } =useContext(SearchContext)
+
+
 
 
   return (
@@ -21,7 +25,7 @@ const [serchresults,Setsearchresults] = useState("")
         <Header Setsearchresults={Setsearchresults} setOverlayVisible={setOverlayVisible} />
         <main className={overlayVisible ? 'main-blur' : ''}>
           {
-            serchresults<1 ? <Outlet/> : <Search_results />
+            inp.length<1 ? <Outlet/> : <Search_results />
           }
         </main>
         <Footer />

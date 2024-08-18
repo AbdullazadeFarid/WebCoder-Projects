@@ -1,0 +1,20 @@
+.category{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+h5{
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+    &_chekbox{
+        border: 1.5px solid rgba(184, 146, 106, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+    border-radius: 7px;
+    }
+}

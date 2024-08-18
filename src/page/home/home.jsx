@@ -9,7 +9,7 @@ import aboutus from "../../assets/aboutus.png"
 import backgr from "../../assets/Group 3302.png"
 import contactimg from '../../assets/sliderimg/contact.png'
 //slider
-import slide1 from "../../assets/sliderimg/Rectangle 109.png"
+import slide1 from "../../assets/sliderimg/Rectangle 109.png" 
 import slide2 from "../../assets/sliderimg/Rectangle 110.png"
 import slide3 from "../../assets/sliderimg/Rectangle 111.png"
 import slide4 from "../../assets/sliderimg/Rectangle 112.png"

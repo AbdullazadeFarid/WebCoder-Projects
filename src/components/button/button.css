@@ -16,9 +16,6 @@
     max-width: 100% !important;
   }
 }
-.button_comp:hover {
-  background-color: rgb(154, 121, 88);
-}
 
 .reset_btn {
   margin-top: 20px;
