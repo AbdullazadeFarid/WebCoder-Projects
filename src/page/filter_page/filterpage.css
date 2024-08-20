@@ -1,6 +1,11 @@
 .filterpage {
   margin-bottom: 91px;
 }
+@media (max-width: 767px) {
+  .filterpage {
+    margin-bottom: 0px;
+  }
+}
 .filterpage_title {
   display: flex;
   align-items: center;
@@ -130,6 +135,9 @@
 }
 @media (max-width: 767px) {
   .filterpage_main_filter_collections_items {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
     background-color: rgb(234, 230, 223);
     color: rgb(184, 146, 106);
     font-weight: 500;

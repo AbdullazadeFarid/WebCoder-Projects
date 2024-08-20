@@ -51,13 +51,14 @@
   }
 
 
-  // .filterpagebtn{
-  //   background-color: transparent;
-  //   color: rgba(184, 146, 106, 1);
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   gap: 10px;
-  //   max-width: 330px;
+.productsinfp_classname{
+  max-width: 330px;
 
-  // }
+  &_transparent{
+    background-color: transparent !important;
+    max-width: 330px;
+    color: rgba(184, 146, 106, 1);
+    font-weight: 500;
+  }
+}
+

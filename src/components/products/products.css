@@ -8,6 +8,7 @@
 
 .products {
   max-width: 100%;
+  text-decoration: none;
 }
 
 .products_top {
@@ -28,6 +29,8 @@
   font-family: "GFS Didot", serif;
   font-size: 20px;
   font-weight: 500;
+  color: rgb(45, 45, 43);
+  text-decoration: none;
 }
 
 .products_bottom_price {

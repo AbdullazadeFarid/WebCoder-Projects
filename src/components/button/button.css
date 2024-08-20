@@ -42,4 +42,14 @@
     max-width: 100%;
     margin-bottom: 50px;
   }
+}
+
+.productsinfp_classname {
+  max-width: 330px;
+}
+.productsinfp_classname_transparent {
+  background-color: transparent !important;
+  max-width: 330px;
+  color: rgb(184, 146, 106);
+  font-weight: 500;
 }/*# sourceMappingURL=button.css.map */

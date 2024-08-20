@@ -55,16 +55,18 @@ import Home from './page/home/home';
 import About from './page/about/about';
 import { SearchProvider } from './context/context';
 import Filterproducts from './page/filter_page/filterpage';
+import ProductsInfo from './page/productsInfo/productsInfo.jsx';
 
 function App() {
   return (
-    <SearchProvider> {/* Оборачиваем всё приложение в провайдер контекста */}
+    <SearchProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='*' element={<Not_found />} />
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/filterProducts' element={<Filterproducts/>}/>
+            <Route path='/Filterproducts/info' element={<ProductsInfo/>}/>
           </Route>
 
           <Route path='/' element={<Verificatinlayout />}>

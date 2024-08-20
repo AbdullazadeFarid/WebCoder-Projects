@@ -1,0 +1,174 @@
+
+
+
+
+.products_info{
+
+    &_title{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &_tit{
+            color: rgb(133, 133, 133);
+            font-size: 16px;
+            font-weight: 400;
+
+        }
+
+        &_line{
+            background-color: rgb(177, 177, 156);
+            height: 16px;
+            width: 1px;
+
+        }
+        &_next{
+            color: rgb(45, 45, 43);
+            font-size: 16px;
+            font-weight: 400;
+
+        }
+    }
+}
+
+
+.product_info_cont{
+    display: flex;
+    margin-top: 50px;
+    &_left{
+        flex: 1;
+        max-width: 640px;
+        width: 100%;
+
+        &_top{
+            // max-width: 640px;
+            // width: 100%;
+            width: 100%;
+
+            img{
+                width: 100%;
+            }
+
+        }
+        &_bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .img_cont{
+                max-width: 195px;
+                width: 100%;
+                height: 100px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+    }
+
+    &_right{
+        flex: 1;
+        margin-left: 60px;
+        &_title{
+            font-family: "GFS Didot", serif;
+            font-size: 32px;
+            font-weight: 700px;
+            color: rgba(45, 45, 43, 1);
+        }
+        &_desc{
+            margin-top: 36px;
+            margin-bottom: 30px;
+        }
+        &_c{
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(45, 45, 43, 1);
+
+        }
+
+
+
+        &_color{
+            display: flex;
+            margin-top: 23px;
+            gap: 3px;
+            margin-bottom: 34px;
+
+            &_green{
+                background-color: rgba(83, 153, 145, 1)
+                ;
+            }
+            &_black{
+                background-color: rgba(85, 85, 85, 1);
+            }
+            &_orange{
+                background-color: rgba(184, 146, 106, 1);
+            }
+
+            .colorbtn{
+                width: 24px;
+                height: 25px;
+                border-radius: 50%;
+
+            }
+        }
+
+
+        &_decriment{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &_element{
+                width: 61px;
+                height: 40px;
+                background-color: rgb(229 221 205);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                color: rgba(184, 146, 106, 1);
+                font-weight: 700;
+            }
+
+
+
+
+            &_num{
+                width: 61px;
+                height: 40px;
+                border: 1px solid rgba(184, 146, 106, 1);
+                border-radius: 10px;
+                background-color: transparent;
+                color: rgba(184, 146, 106, 1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+
+
+        &_price{
+            font-family: "GFS Didot", serif;
+            font-weight: 700;
+            color: rgba(184, 146, 106, 1);
+            font-size: 48px;
+            margin-top: 36px;
+            margin-bottom: 71px;
+
+        }
+        .btn{
+            gap: 10px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+}

@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -13,7 +14,7 @@ import "./products.css";
 
     <div className='products-container'>
       {products.length > 0 && products.map(product => (
-        <div key={product.id} className='products'>
+        <Link to="/Filterproducts/info" key={product.id} className='products'>
           <div className='products_top'>
             <img src={product.imgSrc} alt={product.title} />
             <div className='products_top_heart'>
@@ -28,7 +29,7 @@ import "./products.css";
             <h4 className='products_bottom_title'>{product.title}</h4>
             <p className='products_bottom_price'>{product.price}</p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
 
