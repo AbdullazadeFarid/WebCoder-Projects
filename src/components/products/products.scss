@@ -1,4 +1,7 @@
 
+
+// Products.scss
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -7,40 +10,78 @@
 }
 
 .products {
-  max-width: 100%;
+  display: block;
   text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 330px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+  }
 }
 
 .products_top {
   position: relative;
+  // width: 100%;
+  height: 267px;
+  max-width: 330px;
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     margin-bottom: 22px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &_heart {
     position: absolute;
     top: 15px;
     right: 15px;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all  0.3s ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    svg {
+      fill: #b8926a;
+    }
   }
 }
 
-.products_bottom_title {
-  margin-bottom: 22px;
-  font-family: "GFS Didot", serif;
-  font-size: 20px;
-  font-weight: 500;
-  color: rgba(45, 45, 43, 1);
-  text-decoration: none;
-}
+.products_bottom {
+  padding: 15px;
+  // text-align: center;
 
-.products_bottom_price {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: rgba(184, 146, 106, 1);
-  word-break: break-word;
+  & .products_bottom_title {
+    margin-bottom: 22px;
+    font-family: "GFS Didot", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(45, 45, 43, 1);
+  }
+
+  & .products_bottom_price {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgba(184, 146, 106, 1);
+    word-break: break-word;
+  }
 }
 
 /* Мобильные стили */

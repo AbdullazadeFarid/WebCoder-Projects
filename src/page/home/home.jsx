@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./home.css"
 import Button from '../../components/button/button'
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -8,8 +8,9 @@ import Slider from '../../components/slider/slider';
 import aboutus from "../../assets/aboutus.png"
 import backgr from "../../assets/Group 3302.png"
 import contactimg from '../../assets/sliderimg/contact.png'
+import Products from '../../components/products/products';
 //slider
-import slide1 from "../../assets/sliderimg/Rectangle 109.png" 
+import slide1 from "../../assets/sliderimg/Rectangle 109.png"
 import slide2 from "../../assets/sliderimg/Rectangle 110.png"
 import slide3 from "../../assets/sliderimg/Rectangle 111.png"
 import slide4 from "../../assets/sliderimg/Rectangle 112.png"
@@ -19,18 +20,122 @@ import pr1 from '../../assets/products/Rectangle 117.png'
 import pr2 from '../../assets/products/Rectangle 119.png'
 import pr3 from '../../assets/products/Rectangle 119.png'
 import pr4 from '../../assets/products/Rectangle 121.png'
-import Products from '../../components/products/products';
 import Inp from '../../components/inp/inp';
 
 const Home = () => {
-  const [showAll, setShowAll] = useState(false);
 
-  const handleClick = () => {
-    setShowAll(!showAll);
+  const [data,setdata]=useState([])
+  useEffect(() => {
+    const fetchDataAbout = async () => {
+      try {
+        const res = await fetch("http://localhost:3004/about");
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const data = await res.json();
+        setdata(data);  // Сохраняем данные в состоянии
+      } catch (error) {
+      }
+    };
+
+    fetchDataAbout();
+  }, []);
 
 
 
+  const [productss, setProductss] = useState([]);
+
+  useEffect(() => {
+    const fetchDataProducts = async () => {
+      try {
+        const res = await fetch("http://localhost:3004/products");
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const data = await res.json();
+        setProductss(data);  // Сохраняем данные в состоянии
+      } catch (error) {
+        console.error("Ошибка при выполнении запроса:", error);
+      }
+    };
+
+    fetchDataProducts();
+
+  }, []);
+  // console.log(productss);
+
+
+const [collection,setCollection]=useState([])
+
+useEffect(() => {
+  const fetchDataCollection = async () => {
+    try {
+      const res = await fetch("http://localhost:3004/collections");
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const data = await res.json();
+      setCollection(data);  // Сохраняем данные в состоянии
+    } catch (error) {
+      console.error("Ошибка при выполнении запроса:", error);
+    }
   };
+
+  fetchDataCollection();
+}, []);
+// console.log(collection);
+
+
+const [discount,setDiscount]=useState([])
+
+useEffect(() => {
+  const fetcDiscount = async () => {
+    try {
+      const res = await fetch("http://localhost:3004/discount");
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const data = await res.json();
+      setDiscount(data);  // Сохраняем данные в состоянии
+
+    } catch (error) {
+      console.error("Ошибка при выполнении запроса:", error);
+    }
+  };
+
+  fetcDiscount();
+}, []);
+
+
+
+const [headtitle,setHeadtitle]=useState([])
+
+useEffect(() => {
+  const fetchdatahead = async () => {
+    try {
+      const res = await fetch("http://localhost:3004/heading");
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const data = await res.json();
+      setHeadtitle(data);  // Сохраняем данные в состоянии
+
+
+    } catch (error) {
+      console.error("Ошибка при выполнении запроса:", error);
+    }
+  };
+
+  fetchdatahead();
+  // console.log(headtitle);
+}, []);
+
+
+
+
+
+
+
 
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
@@ -63,65 +168,13 @@ const Home = () => {
 
   }
 
-
-
-  const slides = [
-    { id: 1, content: 'Slide 1', imgSrc: slide1 },
-    { id: 2, content: 'Slide 2', imgSrc: slide2 },
-    { id: 3, content: 'Slide 3', imgSrc: slide3 },
-    { id: 4, content: 'Slide 4', imgSrc: slide4 },
-    { id: 5, content: 'Slide 5', imgSrc: slide2 },
-    { id: 6, content: 'Slide 6', imgSrc: slide1 },
-    { id: 7, content: 'Slide 7', imgSrc: slide3 },
-  ];
-
-  const mostPopularProducts = [
-    { id: 1, content: 'Slide 1', imgSrc: slide1 },
-    { id: 2, content: 'Slide 2', imgSrc: slide2 },
-    { id: 3, content: 'Slide 3', imgSrc: slide3 },
-    { id: 4, content: 'Slide 4', imgSrc: slide4 },
-    { id: 5, content: 'Slide 5', imgSrc: slide2 },
-    { id: 6, content: 'Slide 6', imgSrc: slide1 },
-    { id: 7, content: 'Slide 7', imgSrc: slide3 },
-  ];
-
-  const products = {
-    recomendation: [
-      { id: 1, title: 'Grayson Premium Grey Wash Nest of Tables', price: '140$', imgSrc: pr1 },
-      { id: 2, title: 'Product 2', price: '150$', imgSrc: pr2 },
-      { id: 3, title: 'Product 3', price: '160$', imgSrc: pr3 },
-      { id: 4, title: 'Product 4', price: '170$', imgSrc: pr4 },
-      { id: 5, title: 'Product 2', price: '150$', imgSrc: pr2 },
-      { id: 6, title: 'Product 3', price: '160$', imgSrc: pr3 },
-      { id: 7, title: 'Product 4', price: '170$', imgSrc: pr4 },
-      { id: 8, title: 'Product 2', price: '150$', imgSrc: pr2 },
-      { id: 9, title: 'Product 3', price: '160$', imgSrc: pr3 },
-      { id: 10, title: 'Product 3', price: '160$', imgSrc: pr3 },
-    ],
-
-    all: [
-      { id: 1, title: 'Grayson Premium Grey Wash Nest of Tables', price: '140$', imgSrc: pr1 },
-      { id: 2, title: 'Product 2', price: '150$', imgSrc: pr2 },
-      { id: 3, title: 'Product 3', price: '160$', imgSrc: pr3 },
-      { id: 4, title: 'Product 4', price: '170$', imgSrc: pr4 },
-      { id: 5, title: 'Product 2', price: '150$', imgSrc: pr2 },
-      { id: 6, title: 'Product 3', price: '160$', imgSrc: pr3 },
-      { id: 7, title: 'Product 4', price: '170$', imgSrc: pr4 },
-      { id: 8, title: 'Product 2', price: '150$', imgSrc: pr2 },
-      { id: 9, title: 'Product 3', price: '160$', imgSrc: pr3 },
-      { id: 10, title: 'Product 3', price: '160$', imgSrc: pr3 },
-    ]
-  };
-
   return (
     <>
       <div className='conta'>
         <section className='home'>
           <div className='home_left'>
-            <h5 className='home_left_title'>THE FURNITURE THAT DEFINES YOU</h5>
-            <p className='home_left_subtitle'>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-            </p>
+            <h5 className='home_left_title'>{headtitle.title}</h5>
+            <p className='home_left_subtitle'>{headtitle.desc}</p>
             <div>
               <Button
                 text="SHOP NOW"
@@ -132,21 +185,21 @@ const Home = () => {
           </div>
           <div className='home_right'>
             <div className='home_right_backgr'></div>
-            <img className='home_right_img' src={primaryimg} alt="" />
+            <img className='home_right_img' src={headtitle.image} alt="" />
           </div>
         </section>
 
 
 
         <section className='furniture_section'>
-          <Slider slides={slides} />
+          <Slider slides={collection} />
         </section>
 
         <section className='aboutus'>
           <h3  className='aboutus_title'>ABOUT US</h3>
           <div className='aboutus_cont'>
             <div className='aboutus_cont_left'>
-              <img src={aboutus} alt="" />
+              <img src={data.image} alt="about_img" />
             </div>
             <div className='aboutus_cont_right'>
               <p>
@@ -164,8 +217,8 @@ const Home = () => {
         </section>
       </div>
 
-      <section style={{ backgroundImage: `url(${backgr})` }} className='discount'>
-        <h2 className='discount_title'>20% DISCOUNT</h2>
+      <section style={{ backgroundImage: `url(${discount.image})` }} className='discount'>
+        <h2 className='discount_title'>{discount.sale} DISCOUNT</h2>
         <div className='discount_text'>
           <p>
             Et harum quidem rerum facilis est et expedita distinctio.
@@ -185,13 +238,12 @@ const Home = () => {
         <section className='section_products'>
           <div className='section_products_top'>
             <h2 className='section_products_top_title'>PRODUCTS</h2>
-            <p onClick={handleClick} className='section_products_top_desc'>
-              {showAll ? "SHOW LESS" : "SEE ALL"}
+            <p  className='section_products_top_desc'>
+             "SHOW LESS
             </p>
           </div>
           <Products
-  products={showAll ? products.recomendation : []}
-  allproducts={products.all}
+                 products={productss}
 />
         </section>
 
@@ -200,7 +252,7 @@ const Home = () => {
       <section className='most_popular'>
         <h2 className='most_popular_title'>MOST POPULAR</h2>
         <Slider
-        slides={mostPopularProducts}
+        slides={collection}
         />
 
       </section>
@@ -212,7 +264,7 @@ const Home = () => {
 
         <h2 className='collections_cont_title'>COLLECTIONS</h2>
         <Slider
-        slides={mostPopularProducts}
+        slides={collection}
         />
         </div>
 

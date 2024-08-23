@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./about.css"
 import about from '../../assets/aboutus.png'
 
 const About = () => {
+    const [data,setdata]=useState([])
+    useEffect(() => {
+      const fetchDataAbout = async () => {
+        try {
+          const res = await fetch("http://localhost:3004/about");
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+          const data = await res.json();
+          console.log(data);  // Вывод данных в консоль
+          setdata(data);  // Сохраняем данные в состоянии
+        } catch (error) {
+        }
+      };
+
+      fetchDataAbout();
+    }, []);
   return (
 
     <>
@@ -23,17 +40,12 @@ const About = () => {
 
         <div className='about_product_cont'>
             <div className='about_product_cont_left'>
-               <img src={about} alt="" />
+               <img src={data.image} alt="" />
             </div>
 
             <div className='about_product_cont_right'>
 
-                <p>
-                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. <br /> <br />
-Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. <br /> <br />
-Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat et voluptates repudiandae sint et molestiae non
-
-                </p>
+                <p>{data.desc} </p>
 
             </div>
 

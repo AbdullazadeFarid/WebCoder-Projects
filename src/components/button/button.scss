@@ -44,9 +44,10 @@
     max-width: 330px;
     @include mobile{
       width: 100%;
-      max-width: 100%;
+      max-width:none;
       margin-bottom: 50px;
     }
+
 
   }
 
@@ -62,3 +63,21 @@
   }
 }
 
+
+
+.basket_btn{
+max-width: 270px;
+margin-top: 40px;
+}
+
+
+
+.checkout_btn{
+  margin-top: 50px;
+}
+
+.popup_btn{
+  max-width: 214px;
+  padding: 15px 0px;
+  margin-top: 35px;
+}

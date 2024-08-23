@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .products_info_title {
   display: flex;
   align-items: center;
@@ -23,6 +24,11 @@
   display: flex;
   margin-top: 50px;
 }
+@media (max-width: 575px) {
+  .product_info_cont {
+    flex-direction: column;
+  }
+}
 .product_info_cont_left {
   flex: 1;
   max-width: 640px;
@@ -30,14 +36,22 @@
 }
 .product_info_cont_left_top {
   width: 100%;
+  height: 403px;
+  max-width: 640px;
+  background-image: url(https://www.figma.com/file/r9LDbjRUV4V3zlUFE3gpO3/image/9d73958…);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .product_info_cont_left_top img {
   width: 100%;
+  height: 100%;
 }
 .product_info_cont_left_bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 25px;
 }
 .product_info_cont_left_bottom .img_cont {
   max-width: 195px;
@@ -47,6 +61,24 @@
 .product_info_cont_left_bottom .img_cont img {
   width: 100%;
   height: 100%;
+}
+.product_info_cont_left_bottom .bottom {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position-y: bottom;
+}
+.product_info_cont_left_bottom .center {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position-y: -149px;
+}
+.product_info_cont_left_bottom .right {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position-y: center;
 }
 .product_info_cont_right {
   flex: 1;
@@ -130,4 +162,19 @@
   gap: 10px;
   display: flex;
   align-items: center;
+}
+@media (max-width: 575px) {
+  .product_info_cont_right .btn {
+    flex-direction: column;
+  }
+}
+.product_info_cont_similar {
+  margin-top: 120px;
+}
+.product_info_cont_similar h2 {
+  margin-bottom: 60px;
+  margin-top: 49px;
+  font-family: "GFS Didot", serif;
+  color: rgb(45, 45, 43);
+  font-size: clamp(1.5rem, 3.5vw, 7rem);
 }/*# sourceMappingURL=productsInfo.css.map */

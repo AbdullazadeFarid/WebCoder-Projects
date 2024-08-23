@@ -43,9 +43,10 @@ export default function Slider({ slides }) {
         {slides.map(slide => (
           <SwiperSlide key={slide.id}>
             <div className="slide_products">
-              <img src={slide.imgSrc} alt={slide.content} />
+              <img src={slide.image} alt={slide.image} />
               <div className='blur'>
-                {slide.content}
+                {slide.colTitle
+                }
               </div>
             </div>
           </SwiperSlide>

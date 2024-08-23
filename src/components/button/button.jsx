@@ -3,9 +3,9 @@
 import React from 'react';
 import "./button.css";
 
-const Button = ({ text, className, style,icon }) => {
+const Button = ({click, text, className, style,icon }) => {
   return (
-    <button 
+    <button onClick={click}
       className={`button_comp ${className}`}
       style={style}
     >

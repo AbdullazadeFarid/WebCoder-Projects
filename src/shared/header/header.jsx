@@ -5,12 +5,21 @@ import React, { useContext, useState } from 'react';
 import { IoSearchOutline } from "react-icons/io5";
 import { SlBasket } from "react-icons/sl";
 import { CiUser } from "react-icons/ci";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./header.css";
 import Inpsearch from "../../components/inpSearch/inpsearch";
 import { SearchContext } from '../../context/context';
 
 const Header = ({ setOverlayVisible }) => {
+
+  const nav = useNavigate()
+
+
+  const basketClick=()=>{
+    nav("/basket")
+  }
+
+
   const [currentLang, setCurrentLang] = useState("Az");
   const [showLangList, setShowLangList] = useState(false);
   const [burgerOpen, setBurgerOpen] = useState(false);
@@ -76,7 +85,7 @@ const Header = ({ setOverlayVisible }) => {
               </div>
 
               <div className='header_head_right'>
-                <SlBasket size={24} />
+                <SlBasket onClick={basketClick} size={24} />
                 <Link to="/login" className="user-link">
                   <CiUser color="black" size={24} />
                 </Link>

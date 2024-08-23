@@ -39,7 +39,7 @@
 @media (max-width: 575px) {
   .about_shopnow_btn {
     width: 100%;
-    max-width: 100%;
+    max-width: none;
     margin-bottom: 50px;
   }
 }
@@ -52,4 +52,19 @@
   max-width: 330px;
   color: rgb(184, 146, 106);
   font-weight: 500;
+}
+
+.basket_btn {
+  max-width: 270px;
+  margin-top: 40px;
+}
+
+.checkout_btn {
+  margin-top: 50px;
+}
+
+.popup_btn {
+  max-width: 214px;
+  padding: 15px 0px;
+  margin-top: 35px;
 }/*# sourceMappingURL=button.css.map */
