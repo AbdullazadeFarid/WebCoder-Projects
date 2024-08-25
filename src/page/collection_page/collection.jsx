@@ -36,6 +36,8 @@ const Collectionpage = ({ type }) => {
   return (
     <>
       {type ? (
+
+        //SWIPER
         <>
           <Swiper
             ref={swiperRef} // Привязываем Swiper к рефу
@@ -102,7 +104,11 @@ const Collectionpage = ({ type }) => {
 
           <div className='line'></div>
         </>
+
+        ///
       ) : (
+
+        /// PAGE 
         <div className='cont'>
           <div className='collection'>
             <div className='collection_title'>

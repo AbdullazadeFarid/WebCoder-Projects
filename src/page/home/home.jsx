@@ -7,8 +7,10 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import Products from '../../components/products/products';
 import Contact from '../../components/contact/contact';
 import Collectionpage from '../collection_page/collection';
+import { useLocation } from 'react-router';
 
 const Home = () => {
+
 
   const [data,setdata]=useState([])
   useEffect(() => {

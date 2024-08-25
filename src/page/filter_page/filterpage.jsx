@@ -1,29 +1,17 @@
-
-
-
 import React, { useEffect, useState } from 'react'
-import "./products_page.css"
+import "./filterpage.css"
 import { useLocation } from 'react-router';
 import Dropdown from '../../components/droptown/dropdown';
 import { BsSortDownAlt } from "react-icons/bs";
- import { RiArrowDropDownLine } from "react-icons/ri";
 import Category from '../../components/category/category';
 import Products from '../../components/products/products';
-const Productspage = () => {
 
-  ///
+const Productspage = () => {
 
 
   const location = useLocation();
+  const { coltitle } = location.state || {};
   // console.log(location);
-
-
-  const { coltitle } = location.state || {}; // Получаем coltitle из переданного состояния
-
-
-
-
-
 
 
   const [activeCategories, setActiveCategories] = useState(['All']);
@@ -83,16 +71,7 @@ const Productspage = () => {
     { id: 35, content: 'GUEST ROOM' },
     { id: 36, content: 'FAMILY ROOM' },
     { id: 37, content: 'BATHROOM' },
-
-
-
-
   ];
-
-
-
-
-  ///
 
   const [productss, setProductss] = useState([]);
 
