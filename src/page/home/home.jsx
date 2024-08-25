@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react'
 import "./home.css"
 import Button from '../../components/button/button'
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-import Slider from '../../components/slider/slider';
+// import Slider from '../../components/slider/slider';
 import Products from '../../components/products/products';
 import Contact from '../../components/contact/contact';
+import Collectionpage from '../collection_page/collection';
 
 const Home = () => {
 
@@ -139,8 +140,10 @@ useEffect(() => {
 
 
         <section className='furniture_section'>
-          <Slider slides={collection} />
-        </section>
+        <Collectionpage
+        type={true}
+        />
+         </section>
 
         <section className='aboutus'>
           <h3  className='aboutus_title'>ABOUT US</h3>
@@ -198,8 +201,8 @@ useEffect(() => {
 
       <section className='most_popular'>
         <h2 className='most_popular_title'>MOST POPULAR</h2>
-        <Slider
-        slides={collection}
+        <Collectionpage
+        type={true}
         />
 
       </section>
@@ -210,8 +213,8 @@ useEffect(() => {
         <div className='cont collections_cont'>
 
         <h2 className='collections_cont_title'>COLLECTIONS</h2>
-        <Slider
-        slides={collection}
+        <Collectionpage
+        type={true}
         />
         </div>
 

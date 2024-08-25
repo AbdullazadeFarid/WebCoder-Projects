@@ -4,7 +4,8 @@ import "./productsInfo.css";
 import Button from '../../components/button/button';
 import { useParams } from 'react-router';
 import { getProductById } from '../../services/product.service';
-import Slider from '../../components/slider/slider';
+import Collectionpage from '../collection_page/collection';
+// import Slider from '../../components/slider/slider';
 
 const ProductsInfo = () => {
   const { id } = useParams();
@@ -125,7 +126,10 @@ const ProductsInfo = () => {
 
         <div className='product_info_cont_similar'>
           <h2 className='similar_title'>SIMILAR PRODUCTS</h2>
-          <Slider slides={similar} />
+          {/* <Slider slides={similar} /> */}
+          <Collectionpage
+        type={true}
+        />
         </div>
       </div>
     </div>
