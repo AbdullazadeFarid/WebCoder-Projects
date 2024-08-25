@@ -1,40 +1,23 @@
 
 import React, { useEffect, useState } from 'react';
-import "./filterpage.css";
+import "./filter.css";
 import { BsSortDownAlt } from "react-icons/bs";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Dropdown from '../../components/droptown/dropdown';
 import Products from '../../components/products/products';
-import slide1 from "../../assets/sliderimg/Rectangle 109.png";
-import slide2 from "../../assets/sliderimg/Rectangle 110.png";
-import slide3 from "../../assets/sliderimg/Rectangle 111.png";
-import slide4 from "../../assets/sliderimg/Rectangle 112.png";
 import Category from '../../components/category/category';
+import { useLocation } from 'react-router';
 
-const Filterproducts = () => {
+const Filterproducts = ({productss}) => {
+  const location = useLocation();
+  // console.log(location);
+
+
+  const { coltitle } = location.state || {}; // Получаем coltitle из переданного состояния
 
 
 
-  const [productss, setProductss] = useState([]);
 
-  useEffect(() => {
-    const fetchDataProducts = async () => {
-      try {
-        const res = await fetch("http://localhost:3004/categories");
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const data = await res.json();
-        setProductss(data);  // Сохраняем данные в состоянии
-
-      } catch (error) {
-        console.error("Ошибка при выполнении запроса:", error);
-      }
-    };
-
-    fetchDataProducts();
-
-  }, []);
 
 
 
@@ -85,9 +68,20 @@ const Filterproducts = () => {
   ];
 
   const collections = [
-    { id: 10, content: 'Collection 1' },
-    { id: 20, content: 'Collection 2' },
-    { id: 30, content: 'Collection 3' },
+    { id: 10, content: 'ALL' },
+    { id: 20, content: 'BEDROOM' },
+    { id: 30, content: 'LIVING ROOM' },
+    { id: 31, content: 'KITCHEN' },
+    { id: 32, content: 'LIBRARY' },
+    { id: 33, content: 'OFFICE' },
+    { id: 34, content: 'LAUNDRY ROOM' },
+    { id: 35, content: 'GUEST ROOM' },
+    { id: 36, content: 'FAMILY ROOM' },
+    { id: 37, content: 'BATHROOM' },
+
+
+
+
   ];
 
 
@@ -96,13 +90,30 @@ const Filterproducts = () => {
     <>
       <div className='cont'>
         <div className='filterpage'>
+
+          {
+            coltitle
+            ?
+            <div className='filterpage_title'>
+            <h2 className='filterpage_title_tit'>Home</h2>
+            <div className='filterpage_title_line'></div>
+            <h2 className='filterpage_title_tit'>Collections</h2>
+            <div className='filterpage_title_line'></div>
+            <h2 className='filterpage_title_search'>{coltitle}</h2>
+          </div>
+          :
           <div className='filterpage_title'>
             <h2 className='filterpage_title_tit'>Home</h2>
             <div className='filterpage_title_line'></div>
             <h2 className='filterpage_title_search'>Products</h2>
           </div>
 
-          <h2 className='filterpage_title'>Products</h2>
+          }
+
+          <h2 className='filterpage_title'>
+          {coltitle ? `${coltitle} ` : 'PRODUCTS'}
+
+          </h2>
 
           <div className='filterpage_bottom'>
             <p className='filterpage_bottom_desc'>
@@ -162,7 +173,6 @@ const Filterproducts = () => {
               ?
               productss
               :
-              // productss.filter(item => activeCategories==item.title)
               productss.filter(item=>
                 activeCategories.includes(item.title)
               ) } />

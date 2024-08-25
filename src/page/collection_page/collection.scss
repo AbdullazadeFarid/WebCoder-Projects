@@ -1,0 +1,80 @@
+@import "../../responsive/mixins";
+
+
+.collection {
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include mobile{
+      margin-top: 40px;
+    }
+
+
+
+    &_tit {
+      color: rgb(133, 133, 133);
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &_line {
+      background-color: rgb(177, 177, 156);
+      height: 16px;
+      width: 1px;
+    }
+
+    &_search {
+      color: rgb(45, 45, 43);
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  &_main {
+    &_title {
+      &_collect {
+        margin-bottom: 49px;
+    font-family: "GFS Didot", serif;
+    color: rgb(45, 45, 43);
+    font-size: clamp(1.5rem, 3.5vw, 7rem);
+    margin-top: 49px;
+      }
+      P {
+        margin-bottom: 30px;
+      }
+    }
+
+    &_products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 45px 34px;
+        margin-top: 20px;
+      &_items {
+        max-width: 447px;
+        height: 267px;
+        position: relative;
+
+
+        &_name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 7%;
+            background-color: rgba(255, 255, 255, 0.62);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(107, 97, 79);
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

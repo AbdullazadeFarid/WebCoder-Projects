@@ -3,24 +3,9 @@ import React, { useEffect, useState } from 'react'
 import "./home.css"
 import Button from '../../components/button/button'
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-import primaryimg from '../../assets/Rectangle 1 (1).png'
 import Slider from '../../components/slider/slider';
-import aboutus from "../../assets/aboutus.png"
-import backgr from "../../assets/Group 3302.png"
-import contactimg from '../../assets/sliderimg/contact.png'
 import Products from '../../components/products/products';
-//slider
-import slide1 from "../../assets/sliderimg/Rectangle 109.png"
-import slide2 from "../../assets/sliderimg/Rectangle 110.png"
-import slide3 from "../../assets/sliderimg/Rectangle 111.png"
-import slide4 from "../../assets/sliderimg/Rectangle 112.png"
-
-//pr
-import pr1 from '../../assets/products/Rectangle 117.png'
-import pr2 from '../../assets/products/Rectangle 119.png'
-import pr3 from '../../assets/products/Rectangle 119.png'
-import pr4 from '../../assets/products/Rectangle 121.png'
-import Inp from '../../components/inp/inp';
+import Contact from '../../components/contact/contact';
 
 const Home = () => {
 
@@ -129,44 +114,6 @@ useEffect(() => {
   fetchdatahead();
   // console.log(headtitle);
 }, []);
-
-
-
-
-
-
-
-
-  const [name,setName] = useState("")
-  const [email,setEmail] = useState("")
-  const [nameerr,setNameerr] = useState("")
-  const [emailerr,setEmailerr] = useState("")
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    validateEmail(email);
-    validateName(name);
-  };
-
-
-  const validateEmail = (email) => {
-    const re = /\S+@\S+\.\S+/;
-    if (!re.test(email)) {
-      setEmailerr("Invalid email. For example: homedecor@mail.ru");
-    } else {
-      setEmailerr('');
-    }
-  };
-
-  const validateName=(name)=>{
-    if(name.length<3){
-      setNameerr("Password must be at least 3 characters long");
-      }
-      else{
-        setNameerr("");
-        }
-
-  }
 
   return (
     <>
@@ -277,52 +224,9 @@ useEffect(() => {
         <div className='cont'>
       <h2 className='about_contact_title'>CONTACT </h2>
 
-<div className='about_contact_bottom'>
-
-          <form onSubmit={handleSubmit} className='about_contact_bottom_form'>
-               <Inp
-               className="password_comp"
-               placeholder="NAME, SURNAME"
-                onChange={(e) => setName(e.target.value)}
-                type={"text"}
-               error={nameerr}
-              />
-
-             <Inp
-               className="password_comp"
-               placeholder="E-MAIL ADRESS"
-                onChange={(e) => setEmail(e.target.value)}
-                type={"text"}
-              error={emailerr}
-              />
-
-            <Inp
-               className="password_comp"
-               placeholder="THEME"
-
-              />
-
-             <div className='about_contact_bottom_form_text'>
-             <textarea placeholder='YOUR MESSAGE' className='about_contact_bottom_form_text_textarea' name="" id=""></textarea>
-              <Button
-            text="LOG IN"
-            style={{ maxWidth: "467px" }}
-
-            />
-             </div>
-          </form>
 
 
-
-
-
-
-           <div className='about_contact_bottom_right' >
-
-                   <img src={contactimg} alt="" />
-
-           </div>
-        </div>
+        <Contact/>
     </div>
 
 

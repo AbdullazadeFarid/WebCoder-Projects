@@ -103,9 +103,9 @@ const Header = ({ setOverlayVisible }) => {
               <Link to="/" className={`header_nav_items_item ${active === "Home" ? "activelink" : ""}`}onClick={() => {setInp("");handleActive("Home");}}>Home</Link>
               <Link to="/about" className={`header_nav_items_item ${active === "About" ? "activelink" : ""}`} onClick={() => { setInp("");handleActive("About")}}>About</Link>
               <Link to="Filterproducts" className={`header_nav_items_item ${active === "Products" ? "activelink" : ""}`} onClick={() => handleActive("Products")}>Products</Link>
-              <li className={`header_nav_items_item ${active === "Collections" ? "activelink" : ""}`} onClick={() => handleActive("Collections")}>Collections</li>
+              <Link to="/collection" className={`header_nav_items_item ${active === "Collections" ? "activelink" : ""}`} onClick={() => handleActive("Collections")}>Collections</Link>
               <li className={`header_nav_items_item ${active === "Sale" ? "activelink" : ""}`} onClick={() => handleActive("Sale")}>Sale</li>
-              <li className={`header_nav_items_item ${active === "Contact" ? "activelink" : ""}`} onClick={() => handleActive("Contact")}>Contact</li>
+              <Link to="/contact" className={`header_nav_items_item ${active === "Contact" ? "activelink" : ""}`} onClick={() => handleActive("Contact")}>Contact</Link>
             </ul>
 
             <div className="burg_menu_az">

@@ -1,0 +1,57 @@
+@import "../../responsive/mixins";
+
+
+.about_contact_bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include tablet {
+      flex-direction: column;
+    }
+
+    &_form {
+      flex: 1;
+      @include tablet {
+        width: 100%;
+      }
+
+      &_text {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &_textarea {
+          border: 1px solid rgb(177, 177, 156);
+
+          padding: 17px 20px;
+          border-radius: 10px;
+          outline: none;
+          max-width: 467px;
+          width: 100%;
+          background-color: rgba(234, 230, 223, 1);
+          resize: none;
+          height: auto;
+          min-height: 136px;
+          margin-top: 15px;
+          @include tablet {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    &_right {
+      flex: 1;
+      @include tablet {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 417px;
+        object-fit: cover;
+
+        @include mobile {
+          height: 180px;
+        }
+      }
+    }
+  }

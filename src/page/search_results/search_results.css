@@ -3,6 +3,11 @@
   align-items: center;
   gap: 20px;
 }
+@media (max-width: 575px) {
+  .search_results_title {
+    margin-top: 40px;
+  }
+}
 .search_results_title_tit {
   color: rgb(133, 133, 133);
   font-size: 16px;

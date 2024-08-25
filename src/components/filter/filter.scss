@@ -1,7 +1,6 @@
 @import "../../responsive/mixins";
 
 .filterpage {
-  margin-bottom: 91px;
   @include tablet{
     margin-bottom: 0px;
   }
@@ -9,6 +8,11 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    @include mobile{
+
+      margin-top: 50px;
+    }
+
     &_tit {
       color: rgb(133, 133, 133);
       font-size: 16px;
@@ -27,11 +31,10 @@
   }
 
   &_title {
-    margin-bottom: 49px;
+    margin-bottom: 46px;
     font-family: "GFS Didot", serif;
     color: rgb(45, 45, 43);
     font-size: clamp(1.5rem, 3.5vw, 7rem);
-    margin-top: 49px;
   }
 
   &_bottom {
@@ -43,7 +46,7 @@
     }
 
     &_desc {
-      margin-bottom: 30px;
+      margin-bottom: 54px;
     }
 
     .mobile_dropdown {
@@ -130,7 +133,7 @@
           position: absolute;
           z-index: 2;
           width: 100%;
-      
+
           background-color: rgb(234, 230, 223);
           color: rgb(184, 146, 106);
           font-weight: 500;
@@ -161,8 +164,7 @@
   }
   .filter_products {
     flex: 3;
-    @include mobile{
-      width: 100%;
-    }
+    width: 100%;
+
   }
 }

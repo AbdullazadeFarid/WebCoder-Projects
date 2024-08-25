@@ -9,6 +9,7 @@ import { Pagination } from 'swiper/modules';
 
 export default function Slider({ slides }) {
   const swiperRef = useRef(null); // Создаем реф для управления Swiper
+  
 
   return (
     <>
@@ -42,6 +43,7 @@ export default function Slider({ slides }) {
       >
         {slides.map(slide => (
           <SwiperSlide key={slide.id}>
+
             <div className="slide_products">
               <img src={slide.image} alt={slide.image} />
               <div className='blur'>

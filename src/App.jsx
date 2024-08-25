@@ -15,10 +15,14 @@ import Register from './page/register/register';
 import Home from './page/home/home';
 import About from './page/about/about';
 import { SearchProvider } from './context/context';
-import Filterproducts from './page/filter_page/filterpage';
+import Filterproducts from './page/filter_page/products_page.jsx';
 import ProductsInfo from './page/productsInfo/productsInfo.jsx';
 import Basket from './page/basket/basket.jsx';
 import Checkout from './page/checkout_page/checkout.jsx';
+import Collection from './page/collection_page/collection.jsx';
+import Collectionpage from './page/collection_page/collection.jsx';
+import Productspage from './page/filter_page/products_page.jsx';
+import Contact from './components/contact/contact.jsx';
 
 function App() {
 
@@ -31,7 +35,9 @@ function App() {
           <Route path='*' element={<Not_found />} />
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/filterProducts' element={<Filterproducts />} />
+          <Route path='/filterProducts' element={<Productspage />} />
+          <Route path='/collection' element={<Collectionpage/>}/>
+          <Route path='contact' element={<Contact />} />
           <Route path='/Filterproducts/info/:id' element={<ProductsInfo />} />
         </Route>
 
