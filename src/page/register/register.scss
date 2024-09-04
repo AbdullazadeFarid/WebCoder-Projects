@@ -64,3 +64,42 @@
   }
 
 
+
+  .register_popup{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5); /* Qara fonun şəffaflığı */
+
+    &_cont{
+      max-width: 446px;
+      width: 100%;
+      height: 312px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(234, 230, 223);
+      h2{
+        margin-bottom: 20px;
+        font-weight: 700px;
+        font-size: 37px;
+      }
+      p{
+        font-size: 24px;
+      }
+
+
+      &_gologin{
+        color: rgba(184, 146, 106, 1);
+        font-size: 26px;
+        margin-top: 46px; 
+      }
+
+    }
+
+  }

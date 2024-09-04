@@ -21,6 +21,8 @@ import Checkout from './page/checkout_page/checkout.jsx';
 import Collectionpage from './page/collection_page/collection.jsx';
 import Contact from './components/contact/contact.jsx';
 import Productspage from './page/filter_page/filterpage.jsx';
+import Useraccount from './page/useaccount/useraccount.jsx';
+import Userlayout from './layout/userlayout/userlayout.jsx';
 
 function App() {
 
@@ -37,6 +39,10 @@ function App() {
           <Route path='/collection' element={<Collectionpage/>}/>
           <Route path='contact' element={<Contact />} />
           <Route path='/Filterproducts/info/:id' element={<ProductsInfo />} />
+          <Route ath='/useraccount' element={<Userlayout/>}>
+          <Route path='/useraccount' element={<Useraccount />} />
+
+          </Route>
         </Route>
 
         <Route path='/' element={<Verificatinlayout />}>

@@ -1,0 +1,46 @@
+@import "../../responsive/mixins";
+
+
+
+
+.personal_info{
+    width: 100%;
+
+    &_form{
+        max-width: 447px;
+        width: 100%;
+
+        @include tablet{
+            max-width: 100%;
+        }
+
+     &_items{
+
+
+        &_cont{
+            position: relative;
+
+            &_inp{
+                width: 100%;
+                padding: 20px;
+                border: 2px solid rgba(212, 200, 190, 1) ;
+                background-color: transparent;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                outline: none;
+
+            }
+
+            &_eye{
+                position: absolute;
+                right: 12px;
+                top: 20px;
+
+            }
+
+
+        }
+     }
+
+    }
+}

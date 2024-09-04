@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./login.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/button/button';
 import Inp from '../../components/inp/inp';
 import PrevIcon from '../../components/prev_icon/prevIcon';
@@ -10,6 +10,7 @@ import { RxEyeOpen } from "react-icons/rx";
 
 
 const Login = () => {
+  const nav = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -70,6 +71,46 @@ let secondEye=(
     validatePassword(password);
   };
 
+
+  const [data,setdata]=useState([])
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await fetch("http://localhost:3004/users");
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const data = await res.json();
+        setdata(data);
+      } catch (error) {
+      }
+    };
+
+    getData();
+  }, []);
+
+
+  const formData = (e) => {
+    e.preventDefault();
+
+    const user = data.find(user => user.email === email && user.password === password);
+
+    if (user) {
+      nav(`/useraccount/`, { state: user }); // Bütün istifadəçi məlumatlarını göndərir
+      console.log('User authenticated');
+    } else {
+      setEmailError('Invalid email or password');
+      setPasswordError('Invalid email or password');
+    }
+  };
+
+
+  // console.log(data);
+
+
+
+
+
   return (
     <>
       <div className='login_left'>
@@ -116,6 +157,7 @@ let secondEye=(
             <Button
             text="LOG IN"
             style={{ maxWidth: "467px" }}
+            click={formData}
 
             />
           </form>

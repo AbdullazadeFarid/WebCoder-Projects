@@ -1,0 +1,64 @@
+.userlayout {
+  display: flex;
+  margin-top: 49px;
+  gap: 137px;
+}
+@media (max-width: 767px) {
+  .userlayout {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .myacc {
+    margin-top: 60px;
+  }
+}
+.myacc_tit {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.myacc_tit_title {
+  color: rgb(133, 133, 133);
+  font-size: 16px;
+  font-weight: 400;
+}
+.myacc_tit_line {
+  background-color: rgb(177, 177, 156);
+  height: 16px;
+  width: 1px;
+}
+.myacc_tit_next {
+  color: rgb(45, 45, 43);
+  font-size: 16px;
+  font-weight: 400;
+}
+.myacc_cont {
+  background-color: rgb(212, 200, 190);
+  max-width: 330px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 40px 0px 45px 30px;
+}
+@media (max-width: 767px) {
+  .myacc_cont {
+    max-width: 100%;
+  }
+}
+.myacc_cont .tit {
+  margin: 52px 0px 30px 0px;
+}
+.myacc_cont .wish {
+  margin-bottom: 69px;
+}
+.myacc_cont_info {
+  display: flex;
+  gap: 15px;
+}
+.myacc_cont_info h5 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}/*# sourceMappingURL=uselayout.css.map */

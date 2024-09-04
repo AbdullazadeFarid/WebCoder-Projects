@@ -1,0 +1,80 @@
+@import "../../responsive/mixins";
+
+.userlayout{
+ display: flex;
+ margin-top: 49px;
+ gap: 137px;
+
+ @include tablet{
+    flex-direction: column;
+    gap: 40px;
+
+ }
+
+}
+
+.myacc{
+
+    @include tablet{
+        margin-top: 60px;
+    }
+
+    &_tit{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &_title{
+            color: rgb(133 133 133);
+            font-size: 16px;
+            font-weight: 400;
+
+        }
+        &_line{
+            background-color: rgb(177, 177, 156);
+            height: 16px;
+            width: 1px;
+
+        }
+        &_next{
+            color: rgba(45, 45, 43, 1);
+            font-size: 16px;
+            font-weight: 400;
+
+        }
+    }
+
+
+    &_cont{
+        background-color: rgba(212, 200, 190, 1);
+        max-width: 330px;
+        width: 100%;
+        border-radius: 10px;
+        padding: 40px 0px 45px 30px;
+
+        @include tablet{
+            max-width: 100%;
+        }
+
+        .tit{
+            margin: 52px 0px 30px 0px;
+
+        }
+        .wish{
+            margin-bottom: 69px;
+        }
+
+        &_info{
+            display: flex;
+            gap: 15px;
+
+            h5{
+                font-family: "Raleway", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+            }
+        }
+
+    }
+
+}

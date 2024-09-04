@@ -1,0 +1,29 @@
+.personal_info {
+  width: 100%;
+}
+.personal_info_form {
+  max-width: 447px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .personal_info_form {
+    max-width: 100%;
+  }
+}
+.personal_info_form_items_cont {
+  position: relative;
+}
+.personal_info_form_items_cont_inp {
+  width: 100%;
+  padding: 20px;
+  border: 2px solid rgb(212, 200, 190);
+  background-color: transparent;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.personal_info_form_items_cont_eye {
+  position: absolute;
+  right: 12px;
+  top: 20px;
+}/*# sourceMappingURL=useraccount.css.map */

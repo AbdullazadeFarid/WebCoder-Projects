@@ -11,7 +11,7 @@ const Productspage = () => {
 
   const location = useLocation();
   const { coltitle } = location.state || {};
-  // console.log(location);
+  console.log(location);
 
 
   const [activeCategories, setActiveCategories] = useState(['All']);
