@@ -38,6 +38,8 @@
 }
 .products_top_heart {
   position: absolute;
+  display: flex;
+  align-items: center;
   top: 15px;
   right: 15px;
   background: white;
@@ -46,9 +48,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
-}
-.products_top_heart:hover {
-  background: rgba(0, 0, 0, 0.1);
 }
 .products_top_heart svg {
   fill: #b8926a;

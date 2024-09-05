@@ -44,6 +44,8 @@
 
   &_heart {
     position: absolute;
+    display: flex;
+    align-items: center;
     top: 15px;
     right: 15px;
     background: white;
@@ -53,9 +55,6 @@
     cursor: pointer;
     transition: all  0.3s ease;
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.1);
-    }
 
     svg {
       fill: #b8926a;

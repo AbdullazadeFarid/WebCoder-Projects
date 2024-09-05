@@ -1,58 +1,156 @@
 
-import { Link } from 'react-router-dom';
 
-import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import "./products.css";
-import { SearchContext } from '../../context/context';
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 
-  const Products = ({ products }) => {
+const Products = ({ products,less }) => {
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem('favorites');
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
+
+
+  const handleIconClick = (e, productId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(productId);
+
+
+    let updatedFavorites;
+    if (favorites.includes(productId)) {
+      updatedFavorites = favorites.filter(id => id !== productId);
+    } else {
+      updatedFavorites = [...favorites, productId];
+    }
+
+    setFavorites(updatedFavorites);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+  };
+      const firstwenty = products.slice(0,20)
+      console.log(firstwenty);
 
 
   return (
-
-    <>
-
-
     <div className='products-container'>
-      {products.length > 0 && products.map(product => (
-        <Link
-        to={`/Filterproducts/info/${product.id}`} key={product.id} className='products'>
-          <div className='products_top'>
-            <img src={product.image} alt={product.title}/>
-            <div className='products_top_heart'>
-            <svg width="46" height="38" viewBox="0 0 46 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="46" height="38" rx="5" fill="white"/>
-<path d="M19.9617 25.9109L20.426 25.3219L19.9617 25.9109ZM23 12.5006L22.4596 13.0207C22.601 13.1676 22.7961 13.2506 23 13.2506C23.2039 13.2506 23.399 13.1676 23.5404 13.0207L23 12.5006ZM26.0383 25.9109L26.5026 26.4999L26.0383 25.9109ZM20.426 25.3219C18.9104 24.1271 17.2531 22.9603 15.9383 21.4798C14.6492 20.0282 13.75 18.3345 13.75 16.1371H12.25C12.25 18.8026 13.3605 20.8361 14.8167 22.4758C16.2472 24.0866 18.0708 25.3752 19.4974 26.4999L20.426 25.3219ZM13.75 16.1371C13.75 13.9862 14.9654 12.1825 16.6244 11.4242C18.2361 10.6875 20.4017 10.8826 22.4596 13.0207L23.5404 11.9805C21.0985 9.44352 18.2641 9.02539 16.0008 10.06C13.7847 11.0729 12.25 13.425 12.25 16.1371H13.75ZM19.4974 26.4999C20.0097 26.9037 20.5595 27.3343 21.1168 27.6599C21.6739 27.9854 22.3096 28.25 23 28.25V26.75C22.6904 26.75 22.3261 26.6293 21.8736 26.3648C21.4213 26.1005 20.9521 25.7366 20.426 25.3219L19.4974 26.4999ZM26.5026 26.4999C27.9292 25.3752 29.7528 24.0866 31.1833 22.4758C32.6395 20.8361 33.75 18.8026 33.75 16.1371H32.25C32.25 18.3345 31.3508 20.0282 30.0617 21.4798C28.7469 22.9603 27.0896 24.1271 25.574 25.3219L26.5026 26.4999ZM33.75 16.1371C33.75 13.425 32.2153 11.0729 29.9992 10.06C27.7359 9.02539 24.9015 9.44352 22.4596 11.9805L23.5404 13.0207C25.5983 10.8826 27.7639 10.6875 29.3756 11.4242C31.0346 12.1825 32.25 13.9862 32.25 16.1371H33.75ZM25.574 25.3219C25.0479 25.7366 24.5787 26.1005 24.1264 26.3648C23.6739 26.6293 23.3096 26.75 23 26.75V28.25C23.6904 28.25 24.3261 27.9854 24.8832 27.6599C25.4405 27.3343 25.9903 26.9037 26.5026 26.4999L25.574 25.3219Z" fill="#B8926A"/>
-</svg>
-            </div>
-          </div>
 
-          <div className='products_bottom'>
-            <h4 className='products_bottom_title'>{product.title}</h4>
-            <p className='products_bottom_price'>{product.price}$</p>
-          </div>
-        </Link>
-      ))}
+      {
+        less
+        ?
+        firstwenty.length > 0 && firstwenty.map(product => (
+          <Link
+            to={`/Filterproducts/info/${product.id}`}
+            key={product.id}
+            className='products'
+          >
+            <div className='products_top'>
+              <img src={product.image} alt={product.title} />
+              <div
+                className='products_top_heart'
+                onClick={(e) => handleIconClick(e, product.id)}
+              >
+                {favorites.includes(product.id) ? (
+                  <MdFavorite size="30px" />
+                ) : (
+                  <MdFavoriteBorder size="30px" />
+                )}
+              </div>
+            </div>
+
+            <div className='products_bottom'>
+              <h4 className='products_bottom_title'>{product.title}</h4>
+              <p className='products_bottom_price'>{product.price}$</p>
+            </div>
+          </Link>
+        ))
+
+
+
+        :
+
+ products.length > 0 && products.map(product => (
+  <Link
+    to={`/Filterproducts/info/${product.id}`}
+    key={product.id}
+    className='products'
+  >
+    <div className='products_top'>
+      <img src={product.image} alt={product.title} />
+      <div
+        className='products_top_heart'
+        onClick={(e) => handleIconClick(e, product.id)}
+      >
+        {favorites.includes(product.id) ? (
+          <MdFavorite size="30px" />
+        ) : (
+          <MdFavoriteBorder size="30px" />
+        )}
+      </div>
     </div>
 
+    <div className='products_bottom'>
+      <h4 className='products_bottom_title'>{product.title}</h4>
+      <p className='products_bottom_price'>{product.price}$</p>
+    </div>
+  </Link>
+))
+
+      }
 
 
-
-
-
-
-
-
-
-    </>
-
-
+    </div>
   );
-}
-
-
+};
 
 export default Products;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  {products.length > 0 && products.map(product => (
+//   <Link
+//     to={`/Filterproducts/info/${product.id}`}
+//     key={product.id}
+//     className='products'
+//   >
+//     <div className='products_top'>
+//       <img src={product.image} alt={product.title} />
+//       <div
+//         className='products_top_heart'
+//         onClick={(e) => handleIconClick(e, product.id)}
+//       >
+//         {favorites.includes(product.id) ? (
+//           <MdFavorite size="30px" />
+//         ) : (
+//           <MdFavoriteBorder size="30px" />
+//         )}
+//       </div>
+//     </div>
+
+//     <div className='products_bottom'>
+//       <h4 className='products_bottom_title'>{product.title}</h4>
+//       <p className='products_bottom_price'>{product.price}$</p>
+//     </div>
+//   </Link>
+// ))}

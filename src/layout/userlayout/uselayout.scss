@@ -51,6 +51,7 @@
         width: 100%;
         border-radius: 10px;
         padding: 40px 0px 45px 30px;
+        height: 320px;
 
         @include tablet{
             max-width: 100%;
@@ -58,6 +59,7 @@
 
         .tit{
             margin: 52px 0px 30px 0px;
+
 
         }
         .wish{
@@ -68,10 +70,33 @@
             display: flex;
             gap: 15px;
 
+
+            &_inf{
+                font-family: "Raleway", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-decoration: none;
+                color: rgba(45, 45, 43, 1) ;
+
+
+            }
+            &_link{
+                font-family: "Raleway", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-decoration: none;
+                color: rgba(45, 45, 43, 1) ;
+
+            }
+
             h5{
                 font-family: "Raleway", sans-serif;
                 font-weight: 500;
                 font-size: 16px;
+                color: rgba(45, 45, 43, 1) ;
+                text-decoration: none;
+
+
             }
         }
 

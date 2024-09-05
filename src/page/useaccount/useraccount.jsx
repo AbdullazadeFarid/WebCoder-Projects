@@ -34,7 +34,6 @@ const Useraccount = () => {
   const userInData = data.find(d => d.email === user.email && d.password === user.password);
 
 
-console.log(userInData);
 
 
 

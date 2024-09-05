@@ -34,6 +34,7 @@
   }
 
   &.open {
+    z-index: 77;
     .burger_top {
       transform: translateY(8px) rotate(45deg);
     }
@@ -47,6 +48,7 @@
 
   @include mobile {
     display: flex;
+    
   }
 }
 
@@ -171,6 +173,8 @@
       padding-top: 28px;
       &.navopen {
         display: flex;
+        position: fixed;
+        z-index: 5;
         height: 100vh;
 
         top: 0px;

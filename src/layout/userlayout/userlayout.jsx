@@ -4,6 +4,7 @@ import "./uselayout.css"
 import { FaUser } from "react-icons/fa";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { TbLogout2 } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,13 +34,13 @@ const Userlayout = () => {
                     <div className='myacc_cont_info tit'>
                     <FaUser />
 
-                       <h5>PERSONAL INFORMATION</h5>
+                       <Link className='myacc_cont_info_inf' to="useraccount">PERSONAL INFORMATION</Link>
                     </div>
 
                     <div className='myacc_cont_info wish'>
                     <MdOutlineFavoriteBorder />
 
-                        <h5>WISHLIST</h5>
+                        <Link className='myacc_cont_info_link'  to="wishlist">WISHLIST</Link>
                     </div>
 
                     <div className='myacc_cont_info logout'>

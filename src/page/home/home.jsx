@@ -50,7 +50,6 @@ const Home = () => {
     fetchDataProducts();
 
   }, []);
-  // console.log(productss);
 
 
 const [collection,setCollection]=useState([])
@@ -63,7 +62,7 @@ useEffect(() => {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
       const data = await res.json();
-      setCollection(data);  // Сохраняем данные в состоянии
+      setCollection(data);
     } catch (error) {
       console.error("Ошибка при выполнении запроса:", error);
     }
@@ -71,7 +70,6 @@ useEffect(() => {
 
   fetchDataCollection();
 }, []);
-// console.log(collection);
 
 
 const [discount,setDiscount]=useState([])
@@ -94,7 +92,10 @@ useEffect(() => {
   fetcDiscount();
 }, []);
 
-
+const [less,setLess] = useState(true)
+const showclick=()=>{
+  setLess(!less)
+}
 
 const [headtitle,setHeadtitle]=useState([])
 
@@ -190,12 +191,20 @@ useEffect(() => {
         <section className='section_products'>
           <div className='section_products_top'>
             <h2 className='section_products_top_title'>PRODUCTS</h2>
-            <p  className='section_products_top_desc'>
-             "SHOW LESS
+            <p  onClick={showclick} className='section_products_top_desc'>
+             {
+              less
+              ?
+              "Show more"
+              :
+              "Show less"
+            }
+
             </p>
           </div>
           <Products
                  products={productss}
+                 less={less}
 />
         </section>
 

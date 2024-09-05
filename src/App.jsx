@@ -23,6 +23,7 @@ import Contact from './components/contact/contact.jsx';
 import Productspage from './page/filter_page/filterpage.jsx';
 import Useraccount from './page/useaccount/useraccount.jsx';
 import Userlayout from './layout/userlayout/userlayout.jsx';
+import Wishlist from './page/wishlist/wishlist.jsx';
 
 function App() {
 
@@ -41,8 +42,11 @@ function App() {
           <Route path='/Filterproducts/info/:id' element={<ProductsInfo />} />
           <Route ath='/useraccount' element={<Userlayout/>}>
           <Route path='/useraccount' element={<Useraccount />} />
+          <Route path='/wishlist' element={<Wishlist/>} />
+
 
           </Route>
+
         </Route>
 
         <Route path='/' element={<Verificatinlayout />}>

@@ -28,6 +28,9 @@
   background-color: rgb(45, 45, 43);
   transition: all 0.3s ease;
 }
+.burger.open {
+  z-index: 77;
+}
 .burger.open .burger_top {
   transform: translateY(8px) rotate(45deg);
 }
@@ -160,6 +163,8 @@
   }
   .header .header_nav.navopen {
     display: flex;
+    position: fixed;
+    z-index: 5;
     height: 100vh;
     top: 0px;
     flex-direction: column;

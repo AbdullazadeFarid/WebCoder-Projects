@@ -41,6 +41,7 @@
   width: 100%;
   border-radius: 10px;
   padding: 40px 0px 45px 30px;
+  height: 320px;
 }
 @media (max-width: 767px) {
   .myacc_cont {
@@ -57,8 +58,24 @@
   display: flex;
   gap: 15px;
 }
+.myacc_cont_info_inf {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(45, 45, 43);
+}
+.myacc_cont_info_link {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(45, 45, 43);
+}
 .myacc_cont_info h5 {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 16px;
+  color: rgb(45, 45, 43);
+  text-decoration: none;
 }/*# sourceMappingURL=uselayout.css.map */

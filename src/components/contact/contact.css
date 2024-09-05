@@ -10,6 +10,7 @@
 }
 .about_contact_bottom_form {
   flex: 1;
+  z-index: -3;
 }
 @media (max-width: 767px) {
   .about_contact_bottom_form {
