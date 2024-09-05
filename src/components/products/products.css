@@ -4,6 +4,7 @@
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 45px 34px;
   margin-top: 20px;
+  overflow-y: hidden;
 }
 
 .products {
@@ -14,6 +15,11 @@
   overflow: hidden;
   max-width: 330px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+@media (max-width: 575px) {
+  .products {
+    max-width: 254px !important;
+  }
 }
 .products:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

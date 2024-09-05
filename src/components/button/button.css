@@ -11,12 +11,6 @@
   transition: all ease 0.3s;
   border: 1px solid rgb(184, 146, 106);
 }
-@media (max-width: 767px) {
-  .button_comp {
-    max-width: 100% !important;
-  }
-}
-
 .reset_btn {
   margin-top: 20px;
 }

@@ -23,7 +23,7 @@ export const SearchProvider = ({ children }) => {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
-        setSearchres(data);  // Сохраняем данные в состоянии
+        setSearchres(data);  
 
       } catch (error) {
       }
