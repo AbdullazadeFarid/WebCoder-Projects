@@ -6,14 +6,16 @@ export const SearchContext = createContext();
 export const SearchProvider = ({ children }) => {
 
 
-  // const [datainfo, setDatainfo] = useState("");
-
-
-
-
-
   const [inp, setInp] = useState("");
   const [searchres, setSearchres] = useState([]);
+
+  const [ userinfo, setUserinfo]= useState(null)
+
+
+  const [activeuser,setActiveuser] = useState(true)
+
+
+
 
   useEffect(() => {
     const fetchDataSearch = async () => {
@@ -23,7 +25,7 @@ export const SearchProvider = ({ children }) => {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
-        setSearchres(data);  
+        setSearchres(data);
 
       } catch (error) {
       }
@@ -34,7 +36,7 @@ export const SearchProvider = ({ children }) => {
 
 
   return (
-    <SearchContext.Provider value={{ inp, setInp, searchres, }}>
+    <SearchContext.Provider value={{ inp, setInp, searchres,userinfo,setUserinfo,activeuser,setActiveuser }}>
       {children}
     </SearchContext.Provider>
   );

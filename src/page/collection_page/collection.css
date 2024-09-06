@@ -117,6 +117,11 @@
   gap: 45px 34px;
   margin-top: 20px;
 }
+@media (max-width: 575px) {
+  .collection_main_products {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
 .collection_main_products_items {
   max-width: 447px;
   height: 267px;

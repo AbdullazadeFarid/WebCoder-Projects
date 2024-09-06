@@ -55,11 +55,29 @@ const Register = () => {
     return isValid;
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateFields()) {
       try {
+        // Сначала проверим, существует ли уже email
+        const usersResponse = await fetch("http://localhost:3004/users");
+
+        if (!usersResponse.ok) {
+          throw new Error(`HTTP error! status: ${usersResponse.status}`);
+        }
+
+        const users = await usersResponse.json();
+
+        const emailExists = users.some(user => user.email === email);
+
+        if (emailExists) {
+          setEmailerr('Email is already in use');
+          return;
+        }
+
         const res = await fetch("http://localhost:3004/users", {
           method: 'POST',
           headers: {
@@ -78,8 +96,9 @@ const Register = () => {
 
         const result = await res.json();
 
-        setPopup(true);
+        setPopup(true); // Показать popup или сообщение об успехе
       } catch (error) {
+        console.error('Error during submission:', error);
       }
     }
   };

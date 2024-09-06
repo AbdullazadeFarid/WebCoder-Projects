@@ -58,6 +58,14 @@
   display: flex;
   gap: 15px;
 }
+.myacc_cont_info_close {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(45, 45, 43);
+}
 .myacc_cont_info_inf {
   font-family: "Raleway", sans-serif;
   font-weight: 500;

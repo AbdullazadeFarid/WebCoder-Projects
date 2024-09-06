@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Outlet } from 'react-router'
 import "./uselayout.css"
 import { FaUser } from "react-icons/fa";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { TbLogout2 } from "react-icons/tb";
 import { Link } from 'react-router-dom';
+import { SearchContext } from '../../context/context';
 
 
 
 
 const Userlayout = () => {
+
+    const { setActiveuser,activeuser, } =useContext(SearchContext)
+
+
+
   return (
       <>
 
@@ -46,7 +52,13 @@ const Userlayout = () => {
                     <div className='myacc_cont_info logout'>
                     <TbLogout2 />
 
-                        <h5>LOG OUT</h5>
+                        <Link to="login"
+                        className='myacc_cont_info_close'
+                        onClick={(()=>{
+                            setActiveuser(!activeuser)
+
+
+                        })}>LOG OUT</Link>
                     </div>
 
                 </div>

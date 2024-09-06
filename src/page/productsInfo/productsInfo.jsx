@@ -5,7 +5,6 @@ import Button from '../../components/button/button';
 import { useParams } from 'react-router';
 import { getProductById } from '../../services/product.service';
 import Collectionpage from '../collection_page/collection';
-// import Slider from '../../components/slider/slider';
 
 const ProductsInfo = () => {
   const { id } = useParams();
@@ -13,7 +12,7 @@ const ProductsInfo = () => {
   const [similar, setSimilar] = useState([]);
   const [count, setCount] = useState(1);
 
-  useEffect(() => {   //Similar Ucun
+  useEffect(() => {
     const fetchDataProducts = async () => {
       try {
         const res = await fetch("http://localhost:3004/products");

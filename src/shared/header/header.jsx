@@ -11,8 +11,11 @@ import Inpsearch from "../../components/inpSearch/inpsearch";
 import { SearchContext } from '../../context/context';
 
 const Header = ({ setOverlayVisible }) => {
-  const location = useLocation()
-  // console.log(location);
+  const location = useLocation()  // location bize nav linklere klikliyerek path lerin goturub ollarimistifade ederek acrive class yazmagda komek edir
+
+  const {activeuser } =useContext(SearchContext) // activeuseri i cagiririg context den ki true oldugda ve falsemoldugda usericonuna basanda hara yoneldiyini bildirmek ucun
+
+  const { setInp } =useContext(SearchContext)
 
 
   const nav = useNavigate()
@@ -20,13 +23,14 @@ const Header = ({ setOverlayVisible }) => {
 
   const basketClick=()=>{
     nav("/basket")
+    closeBurg()
+
   }
 
 
   const [currentLang, setCurrentLang] = useState("Az");
   const [showLangList, setShowLangList] = useState(false);
   const [burgerOpen, setBurgerOpen] = useState(false);
-  const [active, Setactive] = useState("");
   const [inputshow, Setinputshow] = useState(false);
 
 
@@ -43,15 +47,10 @@ const Header = ({ setOverlayVisible }) => {
     setBurgerOpen(!burgerOpen);
   };
 
-  const handleActive = (activenav) => {
-    Setactive(activenav);
-  };
-
   const iconClick = () => {
     Setinputshow(!inputshow);
     setOverlayVisible(!inputshow);
   };
-  const { inp, setInp } =useContext(SearchContext)
 
 
   const closeBurg=()=>{
@@ -94,26 +93,37 @@ const Header = ({ setOverlayVisible }) => {
 
               <div className='header_head_right'>
                 <SlBasket onClick={basketClick} size={24} />
-                <Link to="/login" className="user-link">
-                  <CiUser color="black" size={24} />
-                </Link>
+                <Link
+                   to={activeuser ? "/useraccount" : "/login"}
+                   className="user-link">
+                     <CiUser color="black" size={24} />
+              </Link>
+
               </div>
             </div>
           )}
 
           <nav className={`header_nav ${burgerOpen ? 'navopen' : ''}`}>
             <div className='header_burger_nav '>
-              <SlBasket size={24} />
-              <CiUser size={24} />
+              <SlBasket  onClick={basketClick} size={24} />
+              {/* <CiUser size={24} /> */}
+              <Link
+  onClick={() => closeBurg()}
+  to={activeuser ? "/useraccount" : "/login"}
+  className="user-link">
+  <CiUser color="black" size={24} />
+</Link>
+
+
             </div>
 
             <ul className="header_nav_items">
-              <Link  to="/" className={`header_nav_items_item ${location.pathname === "/" ? "activelink" : ""}`}onClick={() => {setInp("");handleActive("Home"); closeBurg()}}>Home</Link>
-              <Link to="/about" className={`header_nav_items_item ${location.pathname === "/about" ? "activelink" : ""}`} onClick={() => { setInp("");handleActive("About");closeBurg()}}>About</Link>
-              <Link to="Filterproducts" className={`header_nav_items_item ${location.pathname === "/Filterproducts" ? "activelink" : ""}`} onClick={() => {handleActive("Products");closeBurg()}}>Products</Link>
-              <Link to="/collection" className={`header_nav_items_item ${location.pathname === "/collection" ? "activelink" : ""}`} onClick={() => {handleActive("Collections");closeBurg()}}>Collections</Link>
+              <Link  to="/" className={`header_nav_items_item ${location.pathname === "/" ? "activelink" : ""}`}onClick={() => {setInp(""); closeBurg()}}>Home</Link>
+              <Link to="/about" className={`header_nav_items_item ${location.pathname === "/about" ? "activelink" : ""}`} onClick={() => { setInp("");closeBurg()}}>About</Link>
+              <Link to="Filterproducts" className={`header_nav_items_item ${location.pathname === "/Filterproducts" ? "activelink" : ""}`} onClick={() => {closeBurg()}}>Products</Link>
+              <Link to="/collection" className={`header_nav_items_item ${location.pathname === "/collection" ? "activelink" : ""}`} onClick={() => {closeBurg()}}>Collections</Link>
               {/* <li className={`header_nav_items_item ${active === "Sale" ? "activelink" : ""}`} onClick={() => handleActive("Sale")}>Sale</li> */}
-              <Link to="/contact" className={`header_nav_items_item ${location.pathname === "/contact" ? "activelink" : ""}`} onClick={() => {handleActive("Contact");closeBurg()}}>Contact</Link>
+              <Link to="/contact" className={`header_nav_items_item ${location.pathname === "/contact" ? "activelink" : ""}`} onClick={() => {closeBurg()}}>Contact</Link>
             </ul>
 
             <div className="burg_menu_az">

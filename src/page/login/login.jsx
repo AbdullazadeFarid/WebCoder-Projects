@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./login.css";
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/button/button';
@@ -7,9 +7,18 @@ import Inp from '../../components/inp/inp';
 import PrevIcon from '../../components/prev_icon/prevIcon';
 import { RxEyeClosed } from "react-icons/rx";
 import { RxEyeOpen } from "react-icons/rx";
+import { SearchContext } from '../../context/context';
 
 
 const Login = () => {
+
+  const {setUserinfo,setActiveuser,activeuser } =useContext(SearchContext)
+
+  // console.log(activeuser);
+
+
+
+
   const nav = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -88,26 +97,30 @@ let secondEye=(
 
     getData();
   }, []);
-  
+
+
+// console.log(data);
 
 
   const formData = (e) => {
     e.preventDefault();
 
-    const user = data.find(user => user.email === email && user.password === password);
+    const user = data.find(user => user.email === email && user.password === password); //burda yoxlayiriq eger mailnen assword user massivinde her hansi user ve mailnen ust uste dusurse true qaytarir
 
     if (user) {
-      nav(`/useraccount/`, { state: user }); // Bütün istifadəçi məlumatlarını göndərir
+      localStorage.setItem('userinfo', JSON.stringify(user));  // true oldugu halda serte daxil olur ve localstoragede hal hazirda active olan useri yadda saxlayiriq localstorage ile
+
+      nav('/useraccount');
+
+      setUserinfo(user);  // burada hal hazirda activ olan istifadecinin melumatlarin userinfoya otururk
+      setActiveuser(true);
+
       console.log('User authenticated');
     } else {
       setEmailError('Invalid email or password');
       setPasswordError('Invalid email or password');
     }
   };
-
-
-  // console.log(data);
-
 
 
 
@@ -147,6 +160,7 @@ let secondEye=(
                 error={passwordError}
                svg={eye ? primaryeye : secondEye}
                func={Eye}
+
 
               />
               </span>

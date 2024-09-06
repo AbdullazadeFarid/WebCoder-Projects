@@ -135,6 +135,10 @@ font-size: 16px;
         grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
         gap: 45px 34px;
         margin-top: 20px;
+        @include mobile{
+          grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+        }
       &_items {
         max-width: 447px;
         height: 267px;
