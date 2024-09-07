@@ -6,6 +6,11 @@
   color: rgb(45, 45, 43);
   font-size: clamp(1.5rem, 3.5vw, 7rem);
 }
+@media (max-width: 575px) {
+  .basket_title {
+    margin-top: 40px;
+  }
+}
 .basket_title_home {
   color: rgb(133, 133, 133);
   font-size: 16px;
@@ -146,6 +151,7 @@
 @media (max-width: 767px) {
   .basket_main_right {
     min-width: 100%;
+    margin-bottom: 30px;
   }
 }
 .basket_main_right_count_inf {

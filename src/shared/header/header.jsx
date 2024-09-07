@@ -28,6 +28,8 @@ const Header = ({ setOverlayVisible }) => {
   }
 
 
+
+
   const [currentLang, setCurrentLang] = useState("Az");
   const [showLangList, setShowLangList] = useState(false);
   const [burgerOpen, setBurgerOpen] = useState(false);
@@ -88,7 +90,7 @@ const Header = ({ setOverlayVisible }) => {
               </div>
 
               <div className='header_head_middle'>
-                <h1 className='header_head_middle_title'>HomeDecor</h1>
+                <Link to="./" className='header_head_middle_title'>HomeDecor</Link>
               </div>
 
               <div className='header_head_right'>

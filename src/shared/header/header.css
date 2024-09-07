@@ -135,6 +135,7 @@
   font-weight: 400;
   font-size: clamp(2rem, 2vw, 7rem);
   color: rgb(45, 45, 43);
+  text-decoration: none;
 }
 .header_head .header_head_right {
   display: flex;

@@ -10,6 +10,9 @@
         font-family: "GFS Didot", serif;
         color: rgb(45, 45, 43);
         font-size: clamp(1.5rem, 3.5vw, 7rem);
+        @include mobile{
+            margin-top: 40px;
+        }
 
         &_home{
             color: rgb(133, 133, 133);
@@ -184,6 +187,7 @@
     min-width: 300px;
     @include tablet{
         min-width: 100%;
+        margin-bottom: 30px;
     }
 
 
@@ -220,6 +224,7 @@
             color: rgba(184, 146, 106, 1);
             font-size: 16px;
             font-weight: 500;
+
          }
 
 

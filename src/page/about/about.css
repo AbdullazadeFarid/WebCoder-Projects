@@ -54,8 +54,13 @@
   }
 }
 .about_product_cont_left {
-  flex: 1;
+  width: 50%;
   height: 430px;
+}
+@media (max-width: 767px) {
+  .about_product_cont_left {
+    width: 100%;
+  }
 }
 .about_product_cont_left img {
   width: 100%;
