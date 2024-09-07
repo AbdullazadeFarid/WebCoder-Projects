@@ -1,5 +1,4 @@
 
-
 import { Link } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from 'react';
 import "./products.css";
@@ -9,6 +8,16 @@ import { SearchContext } from '../../context/context';
 const Products = ({ products, less }) => {
   const { userinfo, setUserinfo } = useContext(SearchContext);
   const [wishlist, setWishlist] = useState([]); // İstifadəçinin wishlist-i üçün state
+
+  // Komponent yüklənəndə localStorage-dan userinfo alırıq və state-i yeniləyirik
+  useEffect(() => {
+    const storedUserInfo = localStorage.getItem('userinfo');
+    if (storedUserInfo) {
+      const userInfoFromStorage = JSON.parse(storedUserInfo);
+      setUserinfo(userInfoFromStorage);
+      setWishlist(userInfoFromStorage.wishlist || []); // localStorage-dan wishlist-i alırıq
+    }
+  }, [setUserinfo]);
 
   // İstifadəçi məlumatlarını serverdən fetch etmək
   useEffect(() => {

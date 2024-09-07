@@ -76,9 +76,9 @@ const Basket = () => {
                       <h3 className='basket_main_section_left_products_product_title'>{item.title}</h3>
 
                       <div className='basket_main_section_left_products_product_btn'>
-                        <div onClick={() => incrementCount(index)} className='basket_main_section_left_products_product_btn_plus'>+</div>
-                        <div className='basket_main_section_left_products_product_btn_count'>{item.count}</div>
                         <div onClick={() => decrementCount(index)} className='basket_main_section_left_products_product_btn_minus'>-</div>
+                        <div className='basket_main_section_left_products_product_btn_count'>{item.count}</div>
+                        <div onClick={() => incrementCount(index)} className='basket_main_section_left_products_product_btn_plus'>+</div>
                       </div>
                       <p className='basket_main_section_left_products_product_price'>{item.price * item.count}$</p>
                     </div>
