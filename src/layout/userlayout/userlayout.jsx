@@ -14,6 +14,9 @@ const Userlayout = () => {
 
     const { setActiveuser,activeuser, } =useContext(SearchContext)
 
+    const clearLocal = () => {
+        localStorage.removeItem('userinfo');
+      };
 
 
   return (
@@ -55,7 +58,8 @@ const Userlayout = () => {
                         <Link to="login"
                         className='myacc_cont_info_close'
                         onClick={(()=>{
-                            setActiveuser(!activeuser)
+                            setActiveuser(!activeuser);
+                            clearLocal();
 
 
                         })}>LOG OUT</Link>
