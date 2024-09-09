@@ -1,10 +1,10 @@
 import "./verification.css"
 
 import React, { useState } from 'react';
-import PrevIcon from '../../components/prev_icon/prevIcon';
 import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import { useNavigate } from "react-router";
+import PrevIcon from "../../components/prev_icon/prevIcon";
 
 const Verification = () => {
   const navigate = useNavigate()
