@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import PrevIcon from '../../components/prev_icon/prevIcon';
 import Button from '../../components/button/button';
 import Inp from '../../components/inp/inp';
 import { Link } from 'react-router-dom';
 import "./register.css";
+import Previcon from '../../components/prev_icon/prevIcon';
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -134,7 +134,7 @@ const Register = () => {
         </div>
       }
       <div className='register_left'>
-        <PrevIcon link={"/"} title={"Home"} />
+        <Previcon link={"/"} title={"Home"} />
         <div className='register_left_bottom'>
           <h3 className='register_left_bottom_title'>REGISTER</h3>
           <form className='register_left_bottom_form' onSubmit={handleSubmit}>

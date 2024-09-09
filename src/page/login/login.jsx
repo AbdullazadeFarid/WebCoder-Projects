@@ -4,11 +4,10 @@ import "./login.css";
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/button/button';
 import Inp from '../../components/inp/inp';
-// import PrevIcon from '../../components/prev_icon/prevIcon';
 import { RxEyeClosed } from "react-icons/rx";
 import { RxEyeOpen } from "react-icons/rx";
 import { SearchContext } from '../../context/context';
-import PrevIcon from '../../components/prev_icon/prevIcon';
+import Previcon from '../../components/prev_icon/prevIcon';
 
 
 const Login = () => {
@@ -129,7 +128,7 @@ let secondEye=(
   return (
     <>
       <div className='login_left'>
-        <PrevIcon link={"/"} title={"Home"} />
+        <Previcon link={"/"} title={"Home"} />
 
         <div className='login_left_bottom'>
           <h3 className='login_left_bottom_title'>LOG IN</h3>

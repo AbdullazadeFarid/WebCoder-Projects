@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import "./newpassword.css";
-import PrevIcon from '../../components/prev_icon/prevIcon';
+import Previcon from '../../components/prev_icon/prevIcon';
 import { useNavigate } from 'react-router';
 
 const Newpassword = () => {
@@ -50,7 +50,7 @@ const Newpassword = () => {
   return (
     <>
       <div className='newpassword_left'>
-        <PrevIcon link={"/login/resetpassword/verification"} title={"Back"} />
+        <Previcon link={"/login/resetpassword/verification"} title={"Back"} />
 
         <div className='newpassword_left_bottom'>
           <h3 className='newpassword_left_bottom_title'>NEW PASSWORD</h3>

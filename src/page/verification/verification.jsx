@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import { useNavigate } from "react-router";
-import PrevIcon from "../../components/prev_icon/prevIcon";
+import Previcon from "../../components/prev_icon/prevIcon";
 
 const Verification = () => {
   const navigate = useNavigate()
@@ -15,7 +15,7 @@ const Verification = () => {
   return (
     <>
       <div className='verification_left'>
-        <PrevIcon link={"/login/resetpassword"} title={"Back"} />
+        <Previcon link={"/login/resetpassword"} title={"Back"} />
 
         <div className='verification_left_form '>
           <h2 className='verification_left_form_title'>VERIFICATION</h2>

@@ -4,7 +4,7 @@ import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import PrevIcon from '../../components/prev_icon/prevIcon';
+import Previcon from '../../components/prev_icon/prevIcon';
 
 const Resetpassword = () => {
  let navigate = useNavigate()
@@ -50,7 +50,7 @@ const Resetpassword = () => {
   return (
     <>
       <div className='resetpass_left'>
-        <PrevIcon link={"/login"} title={"Back"} />
+        <Previcon link={"/login"} title={"Back"} />
 
         <div className='resetpass_left_form '>
           <h2 className='resetpass_left_form_title'>RESET PASSWORD</h2>

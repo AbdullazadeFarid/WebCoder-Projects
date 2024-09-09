@@ -4,7 +4,7 @@ import "./preicon.css"
 import { GrLinkPrevious } from "react-icons/gr";
 
 
-const PrevIcon = (props) => {
+const Previcon = (props) => {
   return (
 
     <>
@@ -22,4 +22,4 @@ const PrevIcon = (props) => {
   )
 }
 
-export default PrevIcon
+export default Previcon
