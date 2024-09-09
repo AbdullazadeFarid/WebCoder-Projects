@@ -7,7 +7,10 @@ const Contactpage = () => {
 <>
 
 
-<Contact/>
+<Contact
+        type={true}
+
+/>
 
 </>
  )

@@ -1,6 +1,47 @@
 @import "../../responsive/mixins";
 
 
+.contact_head{
+  &_title{
+    margin-bottom: 60px;
+    margin-top: 49px;
+    font-family: "GFS Didot", serif;
+    color: rgb(45, 45, 43);
+    font-size: clamp(1.5rem, 3.5vw, 7rem);
+  }
+
+  &_tit{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "GFS Didot", serif;
+    color: rgb(45, 45, 43);
+    font-size: clamp(1.5rem, 3.5vw, 7rem);
+    @include mobile{
+        margin-top: 40px;
+    }
+    &_home{
+      color: rgb(133, 133, 133);
+      font-size: 16px;
+      font-weight: 400;
+
+  }
+  &_line{
+      background-color: rgb(177, 177, 156);
+      height: 16px;
+      width: 1px;
+
+  }
+  &_contact{
+      color: rgb(45, 45, 43);
+      font-size: 16px;
+      font-weight: 400;
+
+  }
+  }
+
+}
+
 .about_contact_bottom {
     display: flex;
     align-items: center;

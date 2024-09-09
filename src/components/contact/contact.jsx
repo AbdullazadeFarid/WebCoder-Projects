@@ -5,7 +5,7 @@ import contactimg from '../../assets/sliderimg/contact.png'
 
 import './contact.css'
 
-const Contact = () => {
+const Contact = ({type}) => {
 
 
     const handleSubmit = (e) => {
@@ -45,8 +45,24 @@ const Contact = () => {
 
 
     <>
+{
+  type=="home"
+  ?
+  null
+  :
+  <div className='contact_head cont'>
+      <div className='contact_head_tit'>
+        <h2 className='contact_head_tit_home'>Home</h2>
+        <div className='contact_head_tit_line'></div>
+        <h2 className='contact_head_tit_contact'>Contact</h2>
+      </div>
+      <h2 className='contact_head_title'>Contact</h2>
+    </div>
+}
+
 
 <div className='about_contact_bottom cont'>
+
 
 <form onSubmit={handleSubmit} className='about_contact_bottom_form'>
      <Inp

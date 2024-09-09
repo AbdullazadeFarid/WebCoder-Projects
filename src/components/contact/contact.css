@@ -1,3 +1,39 @@
+.contact_head_title {
+  margin-bottom: 60px;
+  margin-top: 49px;
+  font-family: "GFS Didot", serif;
+  color: rgb(45, 45, 43);
+  font-size: clamp(1.5rem, 3.5vw, 7rem);
+}
+.contact_head_tit {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "GFS Didot", serif;
+  color: rgb(45, 45, 43);
+  font-size: clamp(1.5rem, 3.5vw, 7rem);
+}
+@media (max-width: 575px) {
+  .contact_head_tit {
+    margin-top: 40px;
+  }
+}
+.contact_head_tit_home {
+  color: rgb(133, 133, 133);
+  font-size: 16px;
+  font-weight: 400;
+}
+.contact_head_tit_line {
+  background-color: rgb(177, 177, 156);
+  height: 16px;
+  width: 1px;
+}
+.contact_head_tit_contact {
+  color: rgb(45, 45, 43);
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .about_contact_bottom {
   display: flex;
   align-items: center;

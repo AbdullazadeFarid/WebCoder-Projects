@@ -240,7 +240,9 @@ useEffect(() => {
 
 
 
-        <Contact/>
+        <Contact
+        type="home"
+        />
     </div>
 
 
