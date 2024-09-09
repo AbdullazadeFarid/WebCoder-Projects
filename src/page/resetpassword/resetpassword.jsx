@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import PrevIcon from '../../components/prev_icon/prevIcon';
 import "./resetpassword.css";
 import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import PrevIcon from '../../components/prev_icon/prevIcon';
 
 const Resetpassword = () => {
  let navigate = useNavigate()
