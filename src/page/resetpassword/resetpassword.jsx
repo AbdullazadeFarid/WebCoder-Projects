@@ -4,7 +4,7 @@ import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import Previcon from '../../components/prev_icon/prevIcon';
+import Previcon from '../../components/prev_icon/previcon';
 
 const Resetpassword = () => {
  let navigate = useNavigate()

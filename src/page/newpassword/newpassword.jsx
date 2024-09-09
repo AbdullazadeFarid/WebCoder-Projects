@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import "./newpassword.css";
-import Previcon from '../../components/prev_icon/prevIcon';
+import Previcon from '../../components/prev_icon/previcon';
 import { useNavigate } from 'react-router';
 
 const Newpassword = () => {

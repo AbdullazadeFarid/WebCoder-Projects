@@ -7,7 +7,7 @@ import Inp from '../../components/inp/inp';
 import { RxEyeClosed } from "react-icons/rx";
 import { RxEyeOpen } from "react-icons/rx";
 import { SearchContext } from '../../context/context';
-import Previcon from '../../components/prev_icon/prevIcon';
+import Previcon from '../../components/prev_icon/previcon';
 
 
 const Login = () => {

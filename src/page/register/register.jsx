@@ -3,7 +3,7 @@ import Button from '../../components/button/button';
 import Inp from '../../components/inp/inp';
 import { Link } from 'react-router-dom';
 import "./register.css";
-import Previcon from '../../components/prev_icon/prevIcon';
+import Previcon from '../../components/prev_icon/previcon';
 
 const Register = () => {
   const [name, setName] = useState("");

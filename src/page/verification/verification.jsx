@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Inp from '../../components/inp/inp';
 import Button from '../../components/button/button';
 import { useNavigate } from "react-router";
-import Previcon from "../../components/prev_icon/prevIcon";
+import Previcon from "../../components/prev_icon/previcon";
 
 const Verification = () => {
   const navigate = useNavigate()
